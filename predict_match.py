@@ -66,6 +66,35 @@ def asian_handicap_probs(matrix, lines=(-1.5, -1.0, -0.5, 0.0, 0.5, 1.0, 1.5)):
     return results
 
 
+def load_params(path=PARAMS_PATH):
+    with open(path) as f:
+        return json.load(f)
+
+
+def predict(home_team, away_team, params):
+    """Return expected goals and full probability breakdown for a fixture."""
+    teams = params["teams"]
+    missing = [t for t in (home_team, away_team) if t not in teams]
+    if missing:
+        raise KeyError(f"Unknown team(s): {', '.join(missing)}. Known teams: {sorted(teams)}")
+
+    home, away = teams[home_team], teams[away_team]
+    gamma, rho = params["home_advantage"], params["rho"]
+
+    lam = np.exp(home["attack"] + away["defense"] + gamma)
+    mu = np.exp(away["attack"] + home["defense"])
+
+    matrix = score_matrix(lam, mu, rho)
+    return {
+        "lambda": lam,
+        "mu": mu,
+        "matrix": matrix,
+        **outcome_probs(matrix),
+        **{f"goals_{k}": v for k, v in over_under_probs(matrix).items()},
+        "handicaps": asian_handicap_probs(matrix),
+    }
+
+
 def main():
     parser = argparse.ArgumentParser(description="Dixon-Coles match probability predictor")
     parser.add_argument("--home", required=True, help="Home team name")
@@ -73,24 +102,16 @@ def main():
     parser.add_argument("--params", default=PARAMS_PATH)
     args = parser.parse_args()
 
-    with open(args.params) as f:
-        params = json.load(f)
+    params = load_params(args.params)
+    try:
+        result = predict(args.home, args.away, params)
+    except KeyError as e:
+        raise SystemExit(str(e))
 
-    teams = params["teams"]
-    missing = [t for t in (args.home, args.away) if t not in teams]
-    if missing:
-        raise SystemExit(f"Unknown team(s): {', '.join(missing)}. Known teams: {sorted(teams)}")
-
-    home, away = teams[args.home], teams[args.away]
-    gamma, rho = params["home_advantage"], params["rho"]
-
-    lam = np.exp(home["attack"] + away["defense"] + gamma)
-    mu = np.exp(away["attack"] + home["defense"])
-
-    matrix = score_matrix(lam, mu, rho)
-    outcome = outcome_probs(matrix)
-    goals = over_under_probs(matrix)
-    handicaps = asian_handicap_probs(matrix)
+    lam, mu = result["lambda"], result["mu"]
+    outcome = {k: result[k] for k in ("home_win", "draw", "away_win")}
+    goals = {"over": result["goals_over"], "under": result["goals_under"]}
+    handicaps = result["handicaps"]
 
     print(f"{args.home} (home) vs {args.away} (away)")
     print(f"Expected goals: {args.home}={lam:.2f}, {args.away}={mu:.2f}\n")
