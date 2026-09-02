@@ -4,7 +4,7 @@ A small pipeline that scrapes Premier League xG data, fits a time-weighted
 Dixon-Coles model to it, and predicts match outcome probabilities.
 
 ```
-scrape_xg.py  --->  fbref_xg.csv  --->  fit_dixon_coles.py  --->  model_params.json  --->  predict_match.py
+scrape_xg.py  --->  fbref_xg.csv  --->  fit_dixon_coles.py  --->  model_params.json  --->  predict_match.py  --->  find_ev_bets.py
 ```
 
 ## Setup
@@ -14,6 +14,13 @@ python3 -m venv .venv
 source .venv/bin/activate
 pip install requests beautifulsoup4 pandas scipy playwright
 playwright install chromium
+```
+
+`find_ev_bets.py` also needs a free API key from
+[the-odds-api.com](https://the-odds-api.com):
+
+```bash
+export ODDS_API_KEY=your_key_here
 ```
 
 ## 1. `scrape_xg.py`
@@ -90,6 +97,50 @@ Steps:
    - **1X2**: Home Win / Draw / Away Win probabilities
    - **Over/Under 2.5 goals**
    - **Asian handicap** probabilities across lines -1.5 to +1.5
+
+`load_params()` and `predict()` are also exposed as importable functions
+(not just via the CLI), so other scripts — like `find_ev_bets.py` — can
+call the model directly instead of duplicating the probability math.
+
+## 4. `find_ev_bets.py`
+
+Finds +EV Premier League 1X2 bets by comparing live bookmaker odds against
+the Dixon-Coles model.
+
+```bash
+python find_ev_bets.py                          # live odds, default thresholds
+python find_ev_bets.py --min-ev 0.05 --bankroll 500
+python find_ev_bets.py --dry-run                 # sample odds, no API key needed
+```
+
+Steps:
+1. Pulls live EPL 1X2 (`h2h`) odds from
+   [the-odds-api.com](https://the-odds-api.com) via `requests`.
+2. For each fixture, calls `predict_match.predict()` to get model
+   probabilities. Team names differ slightly between the odds API's full
+   official names (e.g. "Tottenham Hotspur") and the model's shorter
+   Understat-derived names (e.g. "Tottenham") — a `TEAM_NAME_ALIASES` map
+   handles the known cases; unmatched fixtures are skipped with a warning
+   rather than silently mispriced.
+3. For each bookmaker outcome, computes:
+   - **EV** = `(model probability × decimal odds) - 1`
+   - **Stake** via fractional Kelly (`f* = (p·b - q) / b`, scaled by
+     `--kelly-fraction`, default 0.25 = quarter-Kelly, a common way to
+     reduce variance versus full Kelly)
+4. Prints every outcome with `EV ≥ --min-ev` (default `0.03` = +3%),
+   sorted by EV descending.
+
+Key flags: `--api-key` (or set `ODDS_API_KEY`), `--region`
+(`uk`/`eu`/`us`/`au`), `--bankroll`, `--min-ev`, `--kelly-fraction`,
+`--dry-run`.
+
+**Caveat**: EV here is only as good as the underlying model — and since
+the Dixon-Coles fit here is on xG rather than actual goals with a
+loosely-identified ρ (see the caveat in `fit_dixon_coles.py` above),
+treat the model probabilities as directional rather than sharp. Compare
+against bookmaker closing lines before trusting a signal, and note that
+recommended stakes are unconstrained (no bankroll cap across
+simultaneous bets) — apply your own risk limits before betting real money.
 
 ## Data files
 
