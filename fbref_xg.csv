@@ -1,0 +1,761 @@
+Season,Date,Home,Home_xG,Score,Away_xG,Away
+2024/25,"Monday, May 19, 2025",Brighton,2.18,3-2,3.06,Liverpool
+2024/25,"Tuesday, May 20, 2025",Crystal Palace,1.68,4-2,1.43,Wolverhampton Wanderers
+2024/25,"Tuesday, May 20, 2025",Manchester City,1.60,3-1,0.96,Bournemouth
+2024/25,"Sunday, May 25, 2025",Nottingham Forest,1.58,0-1,1.31,Chelsea
+2024/25,"Sunday, May 25, 2025",Newcastle United,1.16,0-1,1.07,Everton
+2024/25,"Sunday, May 25, 2025",Manchester United,2.96,2-0,0.34,Aston Villa
+2024/25,"Sunday, May 25, 2025",Liverpool,1.92,1-1,1.41,Crystal Palace
+2024/25,"Sunday, May 25, 2025",Tottenham,1.85,1-4,3.12,Brighton
+2024/25,"Sunday, May 25, 2025",Southampton,0.60,1-2,2.41,Arsenal
+2024/25,"Sunday, May 25, 2025",Wolverhampton Wanderers,1.11,1-1,1.97,Brentford
+2024/25,"Sunday, May 25, 2025",Bournemouth,2.72,2-0,0.16,Leicester
+2024/25,"Sunday, May 25, 2025",Ipswich,0.89,1-3,0.97,West Ham
+2024/25,"Sunday, May 25, 2025",Fulham,2.22,0-2,2.46,Manchester City
+2024/25,"Friday, May 16, 2025",Aston Villa,1.69,2-0,0.52,Tottenham
+2024/25,"Friday, May 16, 2025",Chelsea,1.30,1-0,0.34,Manchester United
+2024/25,"Sunday, May 18, 2025",Everton,2.68,2-0,1.05,Southampton
+2024/25,"Sunday, May 18, 2025",West Ham,0.85,1-2,2.15,Nottingham Forest
+2024/25,"Sunday, May 18, 2025",Brentford,2.43,2-3,1.62,Fulham
+2024/25,"Sunday, May 18, 2025",Leicester,0.79,2-0,1.37,Ipswich
+2024/25,"Sunday, May 18, 2025",Arsenal,1.16,1-0,2.25,Newcastle United
+2024/25,"Monday, May 05, 2025",Crystal Palace,2.34,1-1,0.64,Nottingham Forest
+2024/25,"Saturday, May 10, 2025",Fulham,1.21,1-3,1.33,Everton
+2024/25,"Saturday, May 10, 2025",Ipswich,0.72,0-1,1.32,Brentford
+2024/25,"Saturday, May 10, 2025",Southampton,0.14,0-0,1.58,Manchester City
+2024/25,"Saturday, May 10, 2025",Wolverhampton Wanderers,0.73,0-2,1.41,Brighton
+2024/25,"Saturday, May 10, 2025",Bournemouth,1.02,0-1,1.12,Aston Villa
+2024/25,"Sunday, May 11, 2025",Newcastle United,1.67,2-0,0.65,Chelsea
+2024/25,"Sunday, May 11, 2025",Manchester United,2.31,0-2,2.16,West Ham
+2024/25,"Sunday, May 11, 2025",Nottingham Forest,1.77,2-2,1.23,Leicester
+2024/25,"Sunday, May 11, 2025",Tottenham,0.81,0-2,3.99,Crystal Palace
+2024/25,"Sunday, May 11, 2025",Liverpool,2.75,2-2,2.19,Arsenal
+2024/25,"Thursday, May 01, 2025",Nottingham Forest,0.67,0-2,1.52,Brentford
+2024/25,"Friday, May 02, 2025",Manchester City,0.86,1-0,0.62,Wolverhampton Wanderers
+2024/25,"Saturday, May 03, 2025",Aston Villa,1.29,1-0,0.70,Fulham
+2024/25,"Saturday, May 03, 2025",Everton,0.81,2-2,1.14,Ipswich
+2024/25,"Saturday, May 03, 2025",Leicester,1.61,2-0,0.55,Southampton
+2024/25,"Saturday, May 03, 2025",Arsenal,2.05,1-2,1.42,Bournemouth
+2024/25,"Sunday, May 04, 2025",West Ham,1.15,1-1,0.85,Tottenham
+2024/25,"Sunday, May 04, 2025",Brighton,0.69,1-1,1.64,Newcastle United
+2024/25,"Sunday, May 04, 2025",Brentford,3.59,4-3,1.13,Manchester United
+2024/25,"Sunday, May 04, 2025",Chelsea,3.52,3-1,1.43,Liverpool
+2024/25,"Monday, April 21, 2025",Tottenham,2.40,1-2,0.56,Nottingham Forest
+2024/25,"Tuesday, April 22, 2025",Manchester City,1.36,2-1,1.86,Aston Villa
+2024/25,"Wednesday, April 23, 2025",Arsenal,1.92,2-2,2.51,Crystal Palace
+2024/25,"Saturday, April 26, 2025",Chelsea,0.77,1-0,0.92,Everton
+2024/25,"Saturday, April 26, 2025",Brighton,1.29,3-2,1.24,West Ham
+2024/25,"Saturday, April 26, 2025",Newcastle United,4.12,3-0,0.13,Ipswich
+2024/25,"Saturday, April 26, 2025",Southampton,0.94,1-2,2.00,Fulham
+2024/25,"Saturday, April 26, 2025",Wolverhampton Wanderers,2.58,3-0,1.05,Leicester
+2024/25,"Sunday, April 27, 2025",Bournemouth,0.61,1-1,1.91,Manchester United
+2024/25,"Sunday, April 27, 2025",Liverpool,2.51,5-1,0.51,Tottenham
+2024/25,"Monday, April 14, 2025",Bournemouth,1.86,1-0,1.07,Fulham
+2024/25,"Wednesday, April 16, 2025",Newcastle United,2.33,5-0,2.38,Crystal Palace
+2024/25,"Saturday, April 19, 2025",Brentford,2.96,4-2,1.24,Brighton
+2024/25,"Saturday, April 19, 2025",Crystal Palace,0.34,0-0,0.66,Bournemouth
+2024/25,"Saturday, April 19, 2025",Everton,0.82,0-2,1.88,Manchester City
+2024/25,"Saturday, April 19, 2025",West Ham,0.98,1-1,0.92,Southampton
+2024/25,"Saturday, April 19, 2025",Aston Villa,3.05,4-1,1.27,Newcastle United
+2024/25,"Sunday, April 20, 2025",Fulham,0.31,1-2,0.75,Chelsea
+2024/25,"Sunday, April 20, 2025",Ipswich,0.19,0-4,2.81,Arsenal
+2024/25,"Sunday, April 20, 2025",Manchester United,1.14,0-1,0.19,Wolverhampton Wanderers
+2024/25,"Sunday, April 20, 2025",Leicester,0.23,0-1,4.53,Liverpool
+2024/25,"Monday, April 07, 2025",Leicester,0.35,0-3,3.44,Newcastle United
+2024/25,"Saturday, April 12, 2025",Manchester City,4.60,5-2,1.34,Crystal Palace
+2024/25,"Saturday, April 12, 2025",Brighton,3.70,2-2,1.98,Leicester
+2024/25,"Saturday, April 12, 2025",Nottingham Forest,0.42,0-1,1.26,Everton
+2024/25,"Saturday, April 12, 2025",Southampton,0.41,0-3,3.00,Aston Villa
+2024/25,"Saturday, April 12, 2025",Arsenal,0.77,1-1,0.59,Brentford
+2024/25,"Sunday, April 13, 2025",Chelsea,2.91,2-2,1.60,Ipswich
+2024/25,"Sunday, April 13, 2025",Liverpool,1.43,2-1,1.47,West Ham
+2024/25,"Sunday, April 13, 2025",Wolverhampton Wanderers,2.23,4-2,1.63,Tottenham
+2024/25,"Sunday, April 13, 2025",Newcastle United,2.64,4-1,0.79,Manchester United
+2024/25,"Tuesday, April 01, 2025",Arsenal,2.30,2-1,1.44,Fulham
+2024/25,"Tuesday, April 01, 2025",Wolverhampton Wanderers,1.10,1-0,1.73,West Ham
+2024/25,"Tuesday, April 01, 2025",Nottingham Forest,0.51,1-0,1.87,Manchester United
+2024/25,"Wednesday, April 02, 2025",Brighton,0.56,0-3,1.21,Aston Villa
+2024/25,"Wednesday, April 02, 2025",Bournemouth,2.00,1-2,1.41,Ipswich
+2024/25,"Wednesday, April 02, 2025",Manchester City,2.07,2-0,0.10,Leicester
+2024/25,"Wednesday, April 02, 2025",Newcastle United,2.27,2-1,1.53,Brentford
+2024/25,"Wednesday, April 02, 2025",Southampton,0.69,1-1,0.94,Crystal Palace
+2024/25,"Wednesday, April 02, 2025",Liverpool,1.30,1-0,0.82,Everton
+2024/25,"Thursday, April 03, 2025",Chelsea,1.30,1-0,1.40,Tottenham
+2024/25,"Saturday, April 05, 2025",Everton,1.23,1-1,1.40,Arsenal
+2024/25,"Saturday, April 05, 2025",Crystal Palace,0.44,2-1,1.27,Brighton
+2024/25,"Saturday, April 05, 2025",Ipswich,0.87,1-2,2.81,Wolverhampton Wanderers
+2024/25,"Saturday, April 05, 2025",West Ham,0.91,2-2,1.95,Bournemouth
+2024/25,"Saturday, April 05, 2025",Aston Villa,2.63,2-1,0.97,Nottingham Forest
+2024/25,"Sunday, April 06, 2025",Brentford,1.36,0-0,1.48,Chelsea
+2024/25,"Sunday, April 06, 2025",Fulham,1.73,3-2,1.41,Liverpool
+2024/25,"Sunday, April 06, 2025",Tottenham,2.65,3-1,0.78,Southampton
+2024/25,"Sunday, April 06, 2025",Manchester United,1.23,0-0,0.69,Manchester City
+2024/25,"Monday, March 10, 2025",West Ham,0.82,0-1,1.63,Newcastle United
+2024/25,"Saturday, March 15, 2025",Everton,1.19,1-1,0.52,West Ham
+2024/25,"Saturday, March 15, 2025",Ipswich,0.52,2-4,1.31,Nottingham Forest
+2024/25,"Saturday, March 15, 2025",Manchester City,2.03,2-2,2.11,Brighton
+2024/25,"Saturday, March 15, 2025",Southampton,1.28,1-2,0.54,Wolverhampton Wanderers
+2024/25,"Saturday, March 15, 2025",Bournemouth,2.03,1-2,1.60,Brentford
+2024/25,"Sunday, March 16, 2025",Arsenal,0.70,1-0,0.29,Chelsea
+2024/25,"Sunday, March 16, 2025",Fulham,1.04,2-0,1.41,Tottenham
+2024/25,"Sunday, March 16, 2025",Leicester,1.30,0-3,1.14,Manchester United
+2024/25,"Saturday, March 08, 2025",Nottingham Forest,0.50,1-0,0.72,Manchester City
+2024/25,"Saturday, March 08, 2025",Brighton,1.94,2-1,0.71,Fulham
+2024/25,"Saturday, March 08, 2025",Crystal Palace,3.14,1-0,1.63,Ipswich
+2024/25,"Saturday, March 08, 2025",Liverpool,4.99,3-1,0.51,Southampton
+2024/25,"Saturday, March 08, 2025",Brentford,0.64,0-1,1.30,Aston Villa
+2024/25,"Saturday, March 08, 2025",Wolverhampton Wanderers,0.81,1-1,1.37,Everton
+2024/25,"Sunday, March 09, 2025",Chelsea,1.77,1-0,0.11,Leicester
+2024/25,"Sunday, March 09, 2025",Tottenham,1.35,2-2,2.23,Bournemouth
+2024/25,"Sunday, March 09, 2025",Manchester United,1.31,1-1,1.83,Arsenal
+2024/25,"Tuesday, February 25, 2025",Brighton,2.58,2-1,1.70,Bournemouth
+2024/25,"Tuesday, February 25, 2025",Wolverhampton Wanderers,0.93,1-2,1.43,Fulham
+2024/25,"Tuesday, February 25, 2025",Crystal Palace,4.03,4-1,0.67,Aston Villa
+2024/25,"Tuesday, February 25, 2025",Chelsea,2.98,4-0,0.85,Southampton
+2024/25,"Wednesday, February 26, 2025",Brentford,1.34,1-1,1.45,Everton
+2024/25,"Wednesday, February 26, 2025",Nottingham Forest,0.51,0-0,1.32,Arsenal
+2024/25,"Wednesday, February 26, 2025",Tottenham,1.28,0-1,2.39,Manchester City
+2024/25,"Wednesday, February 26, 2025",Manchester United,1.40,3-2,1.04,Ipswich
+2024/25,"Wednesday, February 26, 2025",Liverpool,1.40,2-0,0.46,Newcastle United
+2024/25,"Thursday, February 27, 2025",West Ham,1.70,2-0,0.29,Leicester
+2024/25,"Wednesday, February 19, 2025",Aston Villa,1.02,2-2,2.04,Liverpool
+2024/25,"Friday, February 21, 2025",Leicester,0.73,0-4,2.03,Brentford
+2024/25,"Saturday, February 22, 2025",Everton,2.10,2-2,0.65,Manchester United
+2024/25,"Saturday, February 22, 2025",Bournemouth,0.63,0-1,2.10,Wolverhampton Wanderers
+2024/25,"Saturday, February 22, 2025",Arsenal,1.37,0-1,1.03,West Ham
+2024/25,"Saturday, February 22, 2025",Fulham,0.23,0-2,1.46,Crystal Palace
+2024/25,"Saturday, February 22, 2025",Ipswich,1.15,1-4,1.59,Tottenham
+2024/25,"Saturday, February 22, 2025",Southampton,0.15,0-4,5.12,Brighton
+2024/25,"Saturday, February 22, 2025",Aston Villa,2.69,2-1,2.17,Chelsea
+2024/25,"Sunday, February 23, 2025",Newcastle United,3.46,4-3,2.39,Nottingham Forest
+2024/25,"Sunday, February 23, 2025",Manchester City,0.58,0-2,0.81,Liverpool
+2024/25,"Wednesday, February 12, 2025",Everton,0.91,2-2,0.93,Liverpool
+2024/25,"Friday, February 14, 2025",Brighton,2.07,3-0,0.65,Chelsea
+2024/25,"Saturday, February 15, 2025",Leicester,0.23,0-2,1.75,Arsenal
+2024/25,"Saturday, February 15, 2025",Aston Villa,2.90,1-1,0.33,Ipswich
+2024/25,"Saturday, February 15, 2025",Fulham,2.21,2-1,0.33,Nottingham Forest
+2024/25,"Saturday, February 15, 2025",Manchester City,2.12,4-0,0.16,Newcastle United
+2024/25,"Saturday, February 15, 2025",Southampton,0.97,1-3,2.09,Bournemouth
+2024/25,"Saturday, February 15, 2025",West Ham,0.67,0-1,1.96,Brentford
+2024/25,"Saturday, February 15, 2025",Crystal Palace,2.31,1-2,1.02,Everton
+2024/25,"Sunday, February 16, 2025",Liverpool,1.87,2-1,1.05,Wolverhampton Wanderers
+2024/25,"Sunday, February 16, 2025",Tottenham,1.97,1-0,1.43,Manchester United
+2024/25,"Monday, February 03, 2025",Chelsea,1.39,2-1,1.19,West Ham
+2024/25,"Saturday, February 01, 2025",Nottingham Forest,4.07,7-0,0.76,Brighton
+2024/25,"Saturday, February 01, 2025",Bournemouth,1.65,0-2,2.72,Liverpool
+2024/25,"Saturday, February 01, 2025",Everton,3.11,4-0,0.45,Leicester
+2024/25,"Saturday, February 01, 2025",Ipswich,1.95,1-2,1.18,Southampton
+2024/25,"Saturday, February 01, 2025",Newcastle United,1.23,1-2,1.61,Fulham
+2024/25,"Saturday, February 01, 2025",Wolverhampton Wanderers,2.00,2-0,0.74,Aston Villa
+2024/25,"Sunday, February 02, 2025",Brentford,1.66,0-2,0.95,Tottenham
+2024/25,"Sunday, February 02, 2025",Manchester United,1.51,0-2,2.45,Crystal Palace
+2024/25,"Sunday, February 02, 2025",Arsenal,1.53,5-1,0.74,Manchester City
+2024/25,"Monday, January 20, 2025",Chelsea,3.15,3-1,1.07,Wolverhampton Wanderers
+2024/25,"Saturday, January 25, 2025",Bournemouth,2.83,5-0,1.00,Nottingham Forest
+2024/25,"Saturday, January 25, 2025",Brighton,0.64,0-1,0.87,Everton
+2024/25,"Saturday, January 25, 2025",Liverpool,2.17,4-1,0.80,Ipswich
+2024/25,"Saturday, January 25, 2025",Southampton,0.83,1-3,3.08,Newcastle United
+2024/25,"Saturday, January 25, 2025",Wolverhampton Wanderers,0.51,0-1,0.89,Arsenal
+2024/25,"Saturday, January 25, 2025",Manchester City,2.23,3-1,1.50,Chelsea
+2024/25,"Sunday, January 26, 2025",Crystal Palace,1.23,1-2,1.92,Brentford
+2024/25,"Sunday, January 26, 2025",Tottenham,1.27,1-2,1.40,Leicester
+2024/25,"Sunday, January 26, 2025",Aston Villa,0.91,1-1,1.68,West Ham
+2024/25,"Sunday, January 26, 2025",Fulham,0.56,0-1,0.20,Manchester United
+2024/25,"Tuesday, January 14, 2025",Brentford,2.39,2-2,2.65,Manchester City
+2024/25,"Tuesday, January 14, 2025",West Ham,0.94,3-2,2.84,Fulham
+2024/25,"Tuesday, January 14, 2025",Chelsea,2.54,2-2,1.15,Bournemouth
+2024/25,"Tuesday, January 14, 2025",Nottingham Forest,0.53,1-1,2.72,Liverpool
+2024/25,"Wednesday, January 15, 2025",Everton,1.23,0-1,1.29,Aston Villa
+2024/25,"Wednesday, January 15, 2025",Leicester,2.10,0-2,2.26,Crystal Palace
+2024/25,"Wednesday, January 15, 2025",Newcastle United,2.13,3-0,1.47,Wolverhampton Wanderers
+2024/25,"Wednesday, January 15, 2025",Arsenal,2.26,2-1,0.78,Tottenham
+2024/25,"Thursday, January 16, 2025",Ipswich,0.27,0-2,1.06,Brighton
+2024/25,"Thursday, January 16, 2025",Manchester United,3.11,3-1,1.37,Southampton
+2024/25,"Saturday, January 18, 2025",Newcastle United,0.84,1-4,2.70,Bournemouth
+2024/25,"Saturday, January 18, 2025",Brentford,1.20,0-2,4.16,Liverpool
+2024/25,"Saturday, January 18, 2025",Leicester,0.68,0-2,2.37,Fulham
+2024/25,"Saturday, January 18, 2025",West Ham,0.22,0-2,1.63,Crystal Palace
+2024/25,"Saturday, January 18, 2025",Arsenal,1.64,2-2,1.21,Aston Villa
+2024/25,"Sunday, January 19, 2025",Everton,2.56,3-2,1.36,Tottenham
+2024/25,"Sunday, January 19, 2025",Manchester United,1.32,1-3,2.17,Brighton
+2024/25,"Sunday, January 19, 2025",Nottingham Forest,2.36,3-2,1.26,Southampton
+2024/25,"Sunday, January 19, 2025",Ipswich,0.80,0-6,3.20,Manchester City
+2024/25,"Monday, January 06, 2025",Wolverhampton Wanderers,1.90,0-3,2.57,Nottingham Forest
+2024/25,"Monday, December 30, 2024",Aston Villa,1.88,2-2,0.94,Brighton
+2024/25,"Monday, December 30, 2024",Ipswich,1.50,2-0,1.61,Chelsea
+2024/25,"Monday, December 30, 2024",Manchester United,1.00,0-2,2.24,Newcastle United
+2024/25,"Wednesday, January 01, 2025",Brentford,0.27,1-3,2.00,Arsenal
+2024/25,"Saturday, January 04, 2025",Tottenham,1.00,1-2,2.43,Newcastle United
+2024/25,"Saturday, January 04, 2025",Bournemouth,2.62,1-0,0.56,Everton
+2024/25,"Saturday, January 04, 2025",Aston Villa,2.35,2-1,0.82,Leicester
+2024/25,"Saturday, January 04, 2025",Crystal Palace,1.28,1-1,1.52,Chelsea
+2024/25,"Saturday, January 04, 2025",Manchester City,1.98,4-1,1.53,West Ham
+2024/25,"Saturday, January 04, 2025",Southampton,0.25,0-5,5.55,Brentford
+2024/25,"Saturday, January 04, 2025",Brighton,1.77,1-1,1.81,Arsenal
+2024/25,"Sunday, January 05, 2025",Fulham,2.65,2-2,1.44,Ipswich
+2024/25,"Sunday, January 05, 2025",Liverpool,2.86,2-2,1.67,Manchester United
+2024/25,"Thursday, December 26, 2024",Manchester City,2.52,1-1,0.65,Everton
+2024/25,"Thursday, December 26, 2024",Bournemouth,1.20,0-0,0.50,Crystal Palace
+2024/25,"Thursday, December 26, 2024",Chelsea,1.56,1-2,1.78,Fulham
+2024/25,"Thursday, December 26, 2024",Newcastle United,2.83,3-0,0.23,Aston Villa
+2024/25,"Thursday, December 26, 2024",Nottingham Forest,1.30,1-0,1.06,Tottenham
+2024/25,"Thursday, December 26, 2024",Southampton,2.20,0-1,1.90,West Ham
+2024/25,"Thursday, December 26, 2024",Wolverhampton Wanderers,0.83,2-0,0.36,Manchester United
+2024/25,"Thursday, December 26, 2024",Liverpool,1.90,3-1,0.22,Leicester
+2024/25,"Friday, December 27, 2024",Brighton,1.34,0-0,0.96,Brentford
+2024/25,"Friday, December 27, 2024",Arsenal,2.16,1-0,0.08,Ipswich
+2024/25,"Sunday, December 29, 2024",Leicester,1.84,0-2,1.58,Manchester City
+2024/25,"Sunday, December 29, 2024",Crystal Palace,3.05,2-1,1.22,Southampton
+2024/25,"Sunday, December 29, 2024",Everton,0.62,0-2,2.03,Nottingham Forest
+2024/25,"Sunday, December 29, 2024",Fulham,0.96,2-2,1.71,Bournemouth
+2024/25,"Sunday, December 29, 2024",Tottenham,2.28,2-2,0.64,Wolverhampton Wanderers
+2024/25,"Sunday, December 29, 2024",West Ham,0.52,0-5,3.30,Liverpool
+2024/25,"Monday, December 16, 2024",Bournemouth,2.05,1-1,1.82,West Ham
+2024/25,"Saturday, December 21, 2024",Aston Villa,2.06,2-1,1.10,Manchester City
+2024/25,"Saturday, December 21, 2024",Brentford,0.77,0-2,0.96,Nottingham Forest
+2024/25,"Saturday, December 21, 2024",West Ham,1.23,1-1,1.34,Brighton
+2024/25,"Saturday, December 21, 2024",Ipswich,1.06,0-4,3.23,Newcastle United
+2024/25,"Saturday, December 21, 2024",Crystal Palace,1.61,1-5,3.05,Arsenal
+2024/25,"Sunday, December 22, 2024",Fulham,1.25,0-0,0.28,Southampton
+2024/25,"Sunday, December 22, 2024",Everton,1.07,0-0,1.52,Chelsea
+2024/25,"Sunday, December 22, 2024",Manchester United,2.29,0-3,1.83,Bournemouth
+2024/25,"Sunday, December 22, 2024",Leicester,0.79,0-3,1.14,Wolverhampton Wanderers
+2024/25,"Sunday, December 22, 2024",Tottenham,1.20,3-6,5.20,Liverpool
+2024/25,"Monday, December 09, 2024",West Ham,1.20,2-1,1.48,Wolverhampton Wanderers
+2024/25,"Saturday, December 14, 2024",Liverpool,2.10,2-2,1.29,Fulham
+2024/25,"Saturday, December 14, 2024",Arsenal,1.31,0-0,0.13,Everton
+2024/25,"Saturday, December 14, 2024",Wolverhampton Wanderers,1.24,1-2,1.73,Ipswich
+2024/25,"Saturday, December 14, 2024",Newcastle United,3.95,4-0,0.19,Leicester
+2024/25,"Saturday, December 14, 2024",Nottingham Forest,2.29,2-1,0.39,Aston Villa
+2024/25,"Sunday, December 15, 2024",Brighton,1.32,1-3,3.01,Crystal Palace
+2024/25,"Sunday, December 15, 2024",Manchester City,0.64,1-2,2.05,Manchester United
+2024/25,"Sunday, December 15, 2024",Chelsea,2.59,2-1,1.66,Brentford
+2024/25,"Sunday, December 15, 2024",Southampton,1.27,0-5,3.89,Tottenham
+2024/25,"Tuesday, December 03, 2024",Ipswich,0.47,0-1,1.65,Crystal Palace
+2024/25,"Tuesday, December 03, 2024",Leicester,2.78,3-1,2.88,West Ham
+2024/25,"Wednesday, December 04, 2024",Everton,1.50,4-0,0.85,Wolverhampton Wanderers
+2024/25,"Wednesday, December 04, 2024",Manchester City,3.20,3-0,0.80,Nottingham Forest
+2024/25,"Wednesday, December 04, 2024",Newcastle United,1.52,3-3,2.23,Liverpool
+2024/25,"Wednesday, December 04, 2024",Southampton,1.91,1-5,5.83,Chelsea
+2024/25,"Wednesday, December 04, 2024",Arsenal,2.97,2-0,0.26,Manchester United
+2024/25,"Wednesday, December 04, 2024",Aston Villa,3.22,3-1,1.13,Brentford
+2024/25,"Thursday, December 05, 2024",Fulham,0.67,3-1,1.10,Brighton
+2024/25,"Thursday, December 05, 2024",Bournemouth,3.28,1-0,0.62,Tottenham
+2024/25,"Saturday, December 07, 2024",Aston Villa,2.51,1-0,0.39,Southampton
+2024/25,"Saturday, December 07, 2024",Brentford,1.75,4-2,1.96,Newcastle United
+2024/25,"Saturday, December 07, 2024",Crystal Palace,1.21,2-2,1.58,Manchester City
+2024/25,"Saturday, December 07, 2024",Manchester United,1.47,2-3,0.65,Nottingham Forest
+2024/25,"Sunday, December 08, 2024",Fulham,0.15,1-1,2.43,Arsenal
+2024/25,"Sunday, December 08, 2024",Ipswich,1.57,1-2,3.49,Bournemouth
+2024/25,"Sunday, December 08, 2024",Leicester,1.42,2-2,1.12,Brighton
+2024/25,"Sunday, December 08, 2024",Tottenham,3.25,3-4,2.57,Chelsea
+2024/25,"Monday, November 25, 2024",Newcastle United,1.50,0-2,0.94,West Ham
+2024/25,"Friday, November 29, 2024",Brighton,1.87,1-1,0.93,Southampton
+2024/25,"Saturday, November 30, 2024",Brentford,2.22,4-1,0.91,Leicester
+2024/25,"Saturday, November 30, 2024",Crystal Palace,2.30,1-1,0.02,Newcastle United
+2024/25,"Saturday, November 30, 2024",Nottingham Forest,1.77,1-0,0.46,Ipswich
+2024/25,"Saturday, November 30, 2024",Wolverhampton Wanderers,0.87,2-4,3.08,Bournemouth
+2024/25,"Saturday, November 30, 2024",West Ham,1.24,2-5,4.00,Arsenal
+2024/25,"Sunday, December 01, 2024",Chelsea,1.95,3-0,0.88,Aston Villa
+2024/25,"Sunday, December 01, 2024",Manchester United,1.76,4-0,0.77,Everton
+2024/25,"Sunday, December 01, 2024",Tottenham,1.01,1-1,1.57,Fulham
+2024/25,"Sunday, December 01, 2024",Liverpool,3.70,2-0,0.75,Manchester City
+2024/25,"Saturday, November 23, 2024",Leicester,0.97,1-2,2.82,Chelsea
+2024/25,"Saturday, November 23, 2024",Bournemouth,1.91,1-2,1.23,Brighton
+2024/25,"Saturday, November 23, 2024",Arsenal,1.66,3-0,0.40,Nottingham Forest
+2024/25,"Saturday, November 23, 2024",Everton,1.60,0-0,1.34,Brentford
+2024/25,"Saturday, November 23, 2024",Aston Villa,3.04,2-2,1.61,Crystal Palace
+2024/25,"Saturday, November 23, 2024",Fulham,0.72,1-4,1.34,Wolverhampton Wanderers
+2024/25,"Saturday, November 23, 2024",Manchester City,2.16,0-4,3.30,Tottenham
+2024/25,"Sunday, November 24, 2024",Southampton,1.54,2-3,3.19,Liverpool
+2024/25,"Sunday, November 24, 2024",Ipswich,1.99,1-1,1.27,Manchester United
+2024/25,"Monday, November 04, 2024",Fulham,1.43,2-1,0.74,Brentford
+2024/25,"Saturday, November 09, 2024",Brentford,1.56,3-2,2.49,Bournemouth
+2024/25,"Saturday, November 09, 2024",Crystal Palace,1.96,0-2,2.25,Fulham
+2024/25,"Saturday, November 09, 2024",West Ham,1.12,0-0,0.87,Everton
+2024/25,"Saturday, November 09, 2024",Wolverhampton Wanderers,0.91,2-0,0.79,Southampton
+2024/25,"Saturday, November 09, 2024",Brighton,2.87,2-1,2.60,Manchester City
+2024/25,"Saturday, November 09, 2024",Liverpool,2.68,2-0,1.66,Aston Villa
+2024/25,"Sunday, November 10, 2024",Nottingham Forest,1.18,1-3,1.87,Newcastle United
+2024/25,"Sunday, November 10, 2024",Manchester United,1.24,3-0,0.42,Leicester
+2024/25,"Sunday, November 10, 2024",Tottenham,1.75,1-2,2.18,Ipswich
+2024/25,"Sunday, November 10, 2024",Chelsea,1.24,1-1,1.96,Arsenal
+2024/25,"Saturday, November 02, 2024",Newcastle United,0.86,1-0,0.91,Arsenal
+2024/25,"Saturday, November 02, 2024",Bournemouth,2.45,2-1,2.35,Manchester City
+2024/25,"Saturday, November 02, 2024",Ipswich,1.34,1-1,2.34,Leicester
+2024/25,"Saturday, November 02, 2024",Liverpool,1.81,2-1,1.02,Brighton
+2024/25,"Saturday, November 02, 2024",Nottingham Forest,2.35,3-0,0.13,West Ham
+2024/25,"Saturday, November 02, 2024",Southampton,0.54,1-0,1.79,Everton
+2024/25,"Saturday, November 02, 2024",Wolverhampton Wanderers,1.65,2-2,2.65,Crystal Palace
+2024/25,"Sunday, November 03, 2024",Tottenham,2.10,4-1,2.49,Aston Villa
+2024/25,"Sunday, November 03, 2024",Manchester United,2.16,1-1,1.21,Chelsea
+2024/25,"Monday, October 21, 2024",Nottingham Forest,1.89,1-0,0.84,Crystal Palace
+2024/25,"Friday, October 25, 2024",Leicester,0.83,1-3,2.54,Nottingham Forest
+2024/25,"Saturday, October 26, 2024",Manchester City,3.16,1-0,0.37,Southampton
+2024/25,"Saturday, October 26, 2024",Aston Villa,1.97,1-1,0.33,Bournemouth
+2024/25,"Saturday, October 26, 2024",Brentford,4.10,4-3,1.66,Ipswich
+2024/25,"Saturday, October 26, 2024",Brighton,1.51,2-2,1.11,Wolverhampton Wanderers
+2024/25,"Saturday, October 26, 2024",Everton,0.88,1-1,1.50,Fulham
+2024/25,"Sunday, October 27, 2024",Chelsea,1.62,2-1,1.74,Newcastle United
+2024/25,"Sunday, October 27, 2024",Crystal Palace,0.98,1-0,1.02,Tottenham
+2024/25,"Sunday, October 27, 2024",West Ham,2.99,2-1,2.63,Manchester United
+2024/25,"Sunday, October 27, 2024",Arsenal,1.09,2-2,1.35,Liverpool
+2024/25,"Saturday, October 19, 2024",Tottenham,1.44,4-1,0.86,West Ham
+2024/25,"Saturday, October 19, 2024",Fulham,2.63,1-3,1.44,Aston Villa
+2024/25,"Saturday, October 19, 2024",Ipswich,1.17,0-2,1.61,Everton
+2024/25,"Saturday, October 19, 2024",Manchester United,1.77,2-1,0.89,Brentford
+2024/25,"Saturday, October 19, 2024",Newcastle United,1.94,0-1,1.68,Brighton
+2024/25,"Saturday, October 19, 2024",Southampton,2.43,2-3,2.84,Leicester
+2024/25,"Saturday, October 19, 2024",Bournemouth,2.18,2-0,0.74,Arsenal
+2024/25,"Sunday, October 20, 2024",Wolverhampton Wanderers,0.76,1-2,1.37,Manchester City
+2024/25,"Sunday, October 20, 2024",Liverpool,2.23,2-1,1.34,Chelsea
+2024/25,"Monday, September 30, 2024",Bournemouth,1.44,3-1,0.70,Southampton
+2024/25,"Saturday, October 05, 2024",Crystal Palace,0.61,0-1,2.07,Liverpool
+2024/25,"Saturday, October 05, 2024",Leicester,0.91,1-0,1.95,Bournemouth
+2024/25,"Saturday, October 05, 2024",Manchester City,1.37,3-2,2.76,Fulham
+2024/25,"Saturday, October 05, 2024",West Ham,4.39,4-1,1.18,Ipswich
+2024/25,"Saturday, October 05, 2024",Arsenal,3.25,3-1,1.27,Southampton
+2024/25,"Saturday, October 05, 2024",Brentford,4.14,5-3,0.70,Wolverhampton Wanderers
+2024/25,"Saturday, October 05, 2024",Everton,0.69,0-0,1.79,Newcastle United
+2024/25,"Sunday, October 06, 2024",Chelsea,2.28,1-1,1.67,Nottingham Forest
+2024/25,"Sunday, October 06, 2024",Aston Villa,0.53,0-0,0.45,Manchester United
+2024/25,"Sunday, October 06, 2024",Brighton,1.97,3-2,1.09,Tottenham
+2024/25,"Saturday, September 28, 2024",Newcastle United,1.34,1-1,1.27,Manchester City
+2024/25,"Saturday, September 28, 2024",Nottingham Forest,0.61,0-1,1.44,Fulham
+2024/25,"Saturday, September 28, 2024",Everton,1.11,2-1,1.12,Crystal Palace
+2024/25,"Saturday, September 28, 2024",Arsenal,6.05,4-2,0.34,Leicester
+2024/25,"Saturday, September 28, 2024",Brentford,0.37,1-1,0.88,West Ham
+2024/25,"Saturday, September 28, 2024",Chelsea,3.66,4-2,1.21,Brighton
+2024/25,"Saturday, September 28, 2024",Wolverhampton Wanderers,0.75,1-2,2.12,Liverpool
+2024/25,"Sunday, September 29, 2024",Ipswich,1.85,2-2,1.14,Aston Villa
+2024/25,"Sunday, September 29, 2024",Manchester United,0.60,0-3,5.41,Tottenham
+2024/25,"Saturday, September 21, 2024",West Ham,0.76,0-3,2.40,Chelsea
+2024/25,"Saturday, September 21, 2024",Southampton,2.90,1-1,1.65,Ipswich
+2024/25,"Saturday, September 21, 2024",Leicester,1.34,1-1,1.82,Everton
+2024/25,"Saturday, September 21, 2024",Liverpool,2.44,3-0,1.47,Bournemouth
+2024/25,"Saturday, September 21, 2024",Fulham,3.21,3-1,1.10,Newcastle United
+2024/25,"Saturday, September 21, 2024",Aston Villa,2.37,3-1,0.52,Wolverhampton Wanderers
+2024/25,"Saturday, September 21, 2024",Tottenham,3.89,3-1,0.89,Brentford
+2024/25,"Saturday, September 21, 2024",Crystal Palace,1.67,0-0,2.35,Manchester United
+2024/25,"Sunday, September 22, 2024",Brighton,1.57,2-2,1.37,Nottingham Forest
+2024/25,"Sunday, September 22, 2024",Manchester City,2.76,2-2,1.28,Arsenal
+2024/25,"Saturday, September 14, 2024",Southampton,1.36,0-3,3.03,Manchester United
+2024/25,"Saturday, September 14, 2024",Brighton,1.76,0-0,0.72,Ipswich
+2024/25,"Saturday, September 14, 2024",Fulham,2.89,1-1,0.68,West Ham
+2024/25,"Saturday, September 14, 2024",Liverpool,1.17,0-1,0.59,Nottingham Forest
+2024/25,"Saturday, September 14, 2024",Crystal Palace,2.89,2-2,1.65,Leicester
+2024/25,"Saturday, September 14, 2024",Manchester City,1.55,2-1,1.05,Brentford
+2024/25,"Saturday, September 14, 2024",Aston Villa,3.16,3-2,0.85,Everton
+2024/25,"Saturday, September 14, 2024",Bournemouth,1.54,0-1,0.93,Chelsea
+2024/25,"Sunday, September 15, 2024",Tottenham,0.79,0-1,1.12,Arsenal
+2024/25,"Sunday, September 15, 2024",Wolverhampton Wanderers,1.47,1-2,1.48,Newcastle United
+2024/25,"Saturday, August 31, 2024",Arsenal,2.42,1-1,1.82,Brighton
+2024/25,"Saturday, August 31, 2024",Brentford,3.86,3-1,1.65,Southampton
+2024/25,"Saturday, August 31, 2024",Everton,2.56,2-3,2.96,Bournemouth
+2024/25,"Saturday, August 31, 2024",Ipswich,0.71,1-1,1.19,Fulham
+2024/25,"Saturday, August 31, 2024",Leicester,0.77,1-2,2.16,Aston Villa
+2024/25,"Saturday, August 31, 2024",Nottingham Forest,1.41,1-1,0.94,Wolverhampton Wanderers
+2024/25,"Saturday, August 31, 2024",West Ham,0.95,1-3,3.19,Manchester City
+2024/25,"Sunday, September 01, 2024",Newcastle United,1.59,2-1,1.63,Tottenham
+2024/25,"Sunday, September 01, 2024",Chelsea,2.98,1-1,0.46,Crystal Palace
+2024/25,"Sunday, September 01, 2024",Manchester United,1.50,0-3,2.10,Liverpool
+2024/25,"Monday, August 19, 2024",Leicester,1.03,1-1,1.41,Tottenham
+2024/25,"Saturday, August 24, 2024",Brighton,2.14,2-1,1.29,Manchester United
+2024/25,"Saturday, August 24, 2024",Crystal Palace,1.38,0-2,1.53,West Ham
+2024/25,"Saturday, August 24, 2024",Fulham,1.96,2-1,0.86,Leicester
+2024/25,"Saturday, August 24, 2024",Manchester City,3.08,4-1,0.48,Ipswich
+2024/25,"Saturday, August 24, 2024",Southampton,0.21,0-1,2.86,Nottingham Forest
+2024/25,"Saturday, August 24, 2024",Tottenham,2.61,4-0,0.65,Everton
+2024/25,"Saturday, August 24, 2024",Aston Villa,1.32,0-2,1.41,Arsenal
+2024/25,"Sunday, August 25, 2024",Wolverhampton Wanderers,2.42,2-6,2.03,Chelsea
+2024/25,"Sunday, August 25, 2024",Bournemouth,2.54,1-1,1.89,Newcastle United
+2024/25,"Sunday, August 25, 2024",Liverpool,2.72,2-0,0.46,Brentford
+2024/25,"Friday, August 16, 2024",Manchester United,2.04,1-0,0.42,Fulham
+2024/25,"Saturday, August 17, 2024",Ipswich,0.34,0-2,3.93,Liverpool
+2024/25,"Saturday, August 17, 2024",Arsenal,1.63,2-0,0.58,Wolverhampton Wanderers
+2024/25,"Saturday, August 17, 2024",Everton,0.41,0-3,1.79,Brighton
+2024/25,"Saturday, August 17, 2024",Newcastle United,0.43,1-0,1.95,Southampton
+2024/25,"Saturday, August 17, 2024",Nottingham Forest,1.24,1-1,1.91,Bournemouth
+2024/25,"Saturday, August 17, 2024",West Ham,2.80,1-2,2.67,Aston Villa
+2024/25,"Sunday, August 18, 2024",Brentford,1.38,2-1,1.15,Crystal Palace
+2024/25,"Sunday, August 18, 2024",Chelsea,1.06,0-2,1.18,Manchester City
+2025/26,"Monday, May 18, 2026",Arsenal,1.23,1-0,0.19,Burnley
+2025/26,"Tuesday, May 19, 2026",Bournemouth,1.71,1-1,1.27,Manchester City
+2025/26,"Tuesday, May 19, 2026",Chelsea,1.09,2-1,2.15,Tottenham
+2025/26,"Sunday, May 24, 2026",Brighton,0.70,0-3,2.33,Manchester United
+2025/26,"Sunday, May 24, 2026",Burnley,1.28,1-1,2.84,Wolverhampton Wanderers
+2025/26,"Sunday, May 24, 2026",Crystal Palace,1.00,1-2,3.91,Arsenal
+2025/26,"Sunday, May 24, 2026",Fulham,1.73,2-0,0.24,Newcastle United
+2025/26,"Sunday, May 24, 2026",Liverpool,2.99,1-1,1.46,Brentford
+2025/26,"Sunday, May 24, 2026",Manchester City,1.38,1-2,2.44,Aston Villa
+2025/26,"Sunday, May 24, 2026",Nottingham Forest,2.06,1-1,1.34,Bournemouth
+2025/26,"Sunday, May 24, 2026",Sunderland,2.33,2-1,0.92,Chelsea
+2025/26,"Sunday, May 24, 2026",Tottenham,1.41,1-0,0.27,Everton
+2025/26,"Sunday, May 24, 2026",West Ham,2.73,3-0,1.95,Leeds
+2025/26,"Monday, May 11, 2026",Tottenham,1.49,1-1,1.87,Leeds
+2025/26,"Wednesday, May 13, 2026",Manchester City,1.96,3-0,0.43,Crystal Palace
+2025/26,"Friday, May 15, 2026",Aston Villa,2.53,4-2,1.55,Liverpool
+2025/26,"Sunday, May 17, 2026",Manchester United,4.29,3-2,1.84,Nottingham Forest
+2025/26,"Sunday, May 17, 2026",Brentford,1.55,2-2,1.82,Crystal Palace
+2025/26,"Sunday, May 17, 2026",Everton,1.32,1-3,1.28,Sunderland
+2025/26,"Sunday, May 17, 2026",Leeds,0.75,1-0,2.23,Brighton
+2025/26,"Sunday, May 17, 2026",Wolverhampton Wanderers,1.50,1-1,1.48,Fulham
+2025/26,"Sunday, May 17, 2026",Newcastle United,2.13,3-1,0.96,West Ham
+2025/26,"Monday, May 04, 2026",Chelsea,2.17,1-3,2.31,Nottingham Forest
+2025/26,"Monday, May 04, 2026",Everton,1.69,3-3,1.42,Manchester City
+2025/26,"Saturday, May 09, 2026",Liverpool,0.62,1-1,0.60,Chelsea
+2025/26,"Saturday, May 09, 2026",Brighton,2.22,3-0,0.52,Wolverhampton Wanderers
+2025/26,"Saturday, May 09, 2026",Fulham,1.24,0-1,1.00,Bournemouth
+2025/26,"Saturday, May 09, 2026",Sunderland,1.24,0-0,0.54,Manchester United
+2025/26,"Saturday, May 09, 2026",Manchester City,4.37,3-0,0.67,Brentford
+2025/26,"Sunday, May 10, 2026",Burnley,1.71,2-2,1.75,Aston Villa
+2025/26,"Sunday, May 10, 2026",Crystal Palace,3.29,2-2,2.10,Everton
+2025/26,"Sunday, May 10, 2026",Nottingham Forest,1.46,1-1,1.65,Newcastle United
+2025/26,"Sunday, May 10, 2026",West Ham,1.32,0-1,1.43,Arsenal
+2025/26,"Monday, April 27, 2026",Manchester United,1.85,2-1,1.30,Brentford
+2025/26,"Friday, May 01, 2026",Leeds,2.10,3-1,0.43,Burnley
+2025/26,"Saturday, May 02, 2026",Brentford,2.27,3-0,0.75,West Ham
+2025/26,"Saturday, May 02, 2026",Newcastle United,3.13,3-1,1.87,Brighton
+2025/26,"Saturday, May 02, 2026",Wolverhampton Wanderers,1.96,1-1,0.92,Sunderland
+2025/26,"Saturday, May 02, 2026",Arsenal,4.09,3-0,0.70,Fulham
+2025/26,"Sunday, May 03, 2026",Bournemouth,2.30,3-0,0.68,Crystal Palace
+2025/26,"Sunday, May 03, 2026",Manchester United,2.56,3-2,1.03,Liverpool
+2025/26,"Sunday, May 03, 2026",Aston Villa,0.61,1-2,1.12,Tottenham
+2025/26,"Monday, April 20, 2026",Crystal Palace,0.73,0-0,0.62,West Ham
+2025/26,"Tuesday, April 21, 2026",Brighton,2.52,3-0,0.30,Chelsea
+2025/26,"Wednesday, April 22, 2026",Bournemouth,1.91,2-2,1.22,Leeds
+2025/26,"Wednesday, April 22, 2026",Burnley,0.97,0-1,3.41,Manchester City
+2025/26,"Friday, April 24, 2026",Sunderland,0.61,0-5,1.54,Nottingham Forest
+2025/26,"Saturday, April 25, 2026",Fulham,1.24,1-0,0.91,Aston Villa
+2025/26,"Saturday, April 25, 2026",Liverpool,1.45,3-1,2.20,Crystal Palace
+2025/26,"Saturday, April 25, 2026",West Ham,1.84,2-1,1.11,Everton
+2025/26,"Saturday, April 25, 2026",Wolverhampton Wanderers,0.76,0-1,1.06,Tottenham
+2025/26,"Saturday, April 25, 2026",Arsenal,0.64,1-0,0.87,Newcastle United
+2025/26,"Monday, April 13, 2026",Manchester United,1.37,1-2,2.95,Leeds
+2025/26,"Saturday, April 18, 2026",Brentford,2.34,0-0,0.79,Fulham
+2025/26,"Saturday, April 18, 2026",Leeds,3.56,3-0,0.57,Wolverhampton Wanderers
+2025/26,"Saturday, April 18, 2026",Newcastle United,1.61,1-2,3.37,Bournemouth
+2025/26,"Saturday, April 18, 2026",Tottenham,1.56,2-2,1.14,Brighton
+2025/26,"Saturday, April 18, 2026",Chelsea,1.28,0-1,0.44,Manchester United
+2025/26,"Sunday, April 19, 2026",Aston Villa,3.90,4-3,1.56,Sunderland
+2025/26,"Sunday, April 19, 2026",Everton,1.48,1-2,1.38,Liverpool
+2025/26,"Sunday, April 19, 2026",Nottingham Forest,1.44,4-1,0.60,Burnley
+2025/26,"Sunday, April 19, 2026",Manchester City,2.62,2-1,2.29,Arsenal
+2025/26,"Friday, April 10, 2026",West Ham,2.54,4-0,0.57,Wolverhampton Wanderers
+2025/26,"Saturday, April 11, 2026",Arsenal,3.16,1-2,1.39,Bournemouth
+2025/26,"Saturday, April 11, 2026",Brentford,2.26,2-2,1.57,Everton
+2025/26,"Saturday, April 11, 2026",Burnley,0.81,0-2,1.07,Brighton
+2025/26,"Saturday, April 11, 2026",Liverpool,2.01,2-0,1.42,Fulham
+2025/26,"Sunday, April 12, 2026",Nottingham Forest,0.85,1-1,1.36,Aston Villa
+2025/26,"Sunday, April 12, 2026",Sunderland,1.78,1-0,1.02,Tottenham
+2025/26,"Sunday, April 12, 2026",Crystal Palace,3.14,2-1,1.27,Newcastle United
+2025/26,"Sunday, April 12, 2026",Chelsea,1.22,0-3,2.41,Manchester City
+2025/26,"Monday, March 16, 2026",Brentford,2.80,2-2,1.80,Wolverhampton Wanderers
+2025/26,"Friday, March 20, 2026",Bournemouth,1.77,2-2,1.75,Manchester United
+2025/26,"Saturday, March 21, 2026",Brighton,3.43,2-1,0.96,Liverpool
+2025/26,"Saturday, March 21, 2026",Fulham,3.48,3-1,1.93,Burnley
+2025/26,"Saturday, March 21, 2026",Everton,1.45,3-0,1.35,Chelsea
+2025/26,"Saturday, March 21, 2026",Leeds,0.42,0-0,0.30,Brentford
+2025/26,"Sunday, March 22, 2026",Newcastle United,1.27,1-2,2.67,Sunderland
+2025/26,"Sunday, March 22, 2026",Aston Villa,2.49,2-0,0.76,West Ham
+2025/26,"Sunday, March 22, 2026",Tottenham,1.62,0-3,1.54,Nottingham Forest
+2025/26,"Saturday, March 14, 2026",Burnley,1.68,0-0,2.37,Bournemouth
+2025/26,"Saturday, March 14, 2026",Sunderland,0.66,0-1,1.13,Brighton
+2025/26,"Saturday, March 14, 2026",Arsenal,1.91,2-0,1.18,Everton
+2025/26,"Saturday, March 14, 2026",Chelsea,1.73,0-1,1.03,Newcastle United
+2025/26,"Saturday, March 14, 2026",West Ham,0.49,1-1,1.95,Manchester City
+2025/26,"Sunday, March 15, 2026",Crystal Palace,0.53,0-0,1.14,Leeds
+2025/26,"Sunday, March 15, 2026",Manchester United,1.68,3-1,1.21,Aston Villa
+2025/26,"Sunday, March 15, 2026",Nottingham Forest,0.82,0-0,0.93,Fulham
+2025/26,"Sunday, March 15, 2026",Liverpool,1.30,1-1,1.16,Tottenham
+2025/26,"Tuesday, March 03, 2026",Bournemouth,2.32,0-0,0.67,Brentford
+2025/26,"Tuesday, March 03, 2026",Everton,1.16,2-0,0.76,Burnley
+2025/26,"Tuesday, March 03, 2026",Leeds,0.89,0-1,0.84,Sunderland
+2025/26,"Tuesday, March 03, 2026",Wolverhampton Wanderers,0.64,2-1,2.17,Liverpool
+2025/26,"Wednesday, March 04, 2026",Aston Villa,1.07,1-4,3.39,Chelsea
+2025/26,"Wednesday, March 04, 2026",Brighton,0.92,0-1,0.51,Arsenal
+2025/26,"Wednesday, March 04, 2026",Fulham,0.63,0-1,1.50,West Ham
+2025/26,"Wednesday, March 04, 2026",Manchester City,2.73,2-2,1.24,Nottingham Forest
+2025/26,"Wednesday, March 04, 2026",Newcastle United,1.97,2-1,1.81,Manchester United
+2025/26,"Thursday, March 05, 2026",Tottenham,1.30,1-3,1.92,Crystal Palace
+2025/26,"Monday, February 23, 2026",Everton,0.56,0-1,1.45,Manchester United
+2025/26,"Friday, February 27, 2026",Wolverhampton Wanderers,1.51,2-0,1.31,Aston Villa
+2025/26,"Saturday, February 28, 2026",Bournemouth,1.82,1-1,1.08,Sunderland
+2025/26,"Saturday, February 28, 2026",Burnley,0.82,3-4,2.45,Brentford
+2025/26,"Saturday, February 28, 2026",Liverpool,2.10,5-2,1.35,West Ham
+2025/26,"Saturday, February 28, 2026",Newcastle United,1.12,2-3,2.41,Everton
+2025/26,"Saturday, February 28, 2026",Leeds,1.38,0-1,2.47,Manchester City
+2025/26,"Sunday, March 01, 2026",Brighton,1.20,2-1,0.83,Nottingham Forest
+2025/26,"Sunday, March 01, 2026",Fulham,2.32,2-1,0.95,Tottenham
+2025/26,"Sunday, March 01, 2026",Manchester United,2.35,2-1,0.38,Crystal Palace
+2025/26,"Sunday, March 01, 2026",Arsenal,1.72,2-1,1.35,Chelsea
+2025/26,"Wednesday, February 18, 2026",Wolverhampton Wanderers,0.17,2-2,2.01,Arsenal
+2025/26,"Saturday, February 21, 2026",Aston Villa,1.25,1-1,1.28,Leeds
+2025/26,"Saturday, February 21, 2026",Brentford,1.69,0-2,1.37,Brighton
+2025/26,"Saturday, February 21, 2026",Chelsea,2.52,1-1,1.01,Burnley
+2025/26,"Saturday, February 21, 2026",West Ham,2.34,0-0,0.52,Bournemouth
+2025/26,"Saturday, February 21, 2026",Manchester City,2.23,2-1,0.51,Newcastle United
+2025/26,"Sunday, February 22, 2026",Crystal Palace,2.04,1-0,1.68,Wolverhampton Wanderers
+2025/26,"Sunday, February 22, 2026",Nottingham Forest,0.93,0-1,2.40,Liverpool
+2025/26,"Sunday, February 22, 2026",Sunderland,1.76,1-3,2.17,Fulham
+2025/26,"Sunday, February 22, 2026",Tottenham,0.38,1-4,3.32,Arsenal
+2025/26,"Tuesday, February 10, 2026",Chelsea,3.21,2-2,1.29,Leeds
+2025/26,"Tuesday, February 10, 2026",Everton,2.33,1-2,1.41,Bournemouth
+2025/26,"Tuesday, February 10, 2026",Tottenham,1.69,1-2,2.47,Newcastle United
+2025/26,"Tuesday, February 10, 2026",West Ham,1.31,1-1,0.74,Manchester United
+2025/26,"Wednesday, February 11, 2026",Aston Villa,0.58,1-0,0.48,Brighton
+2025/26,"Wednesday, February 11, 2026",Crystal Palace,2.13,2-3,0.69,Burnley
+2025/26,"Wednesday, February 11, 2026",Manchester City,1.68,3-0,1.05,Fulham
+2025/26,"Wednesday, February 11, 2026",Nottingham Forest,3.69,0-0,0.41,Wolverhampton Wanderers
+2025/26,"Wednesday, February 11, 2026",Sunderland,0.69,0-1,3.08,Liverpool
+2025/26,"Thursday, February 12, 2026",Brentford,1.81,1-1,0.78,Arsenal
+2025/26,"Monday, February 02, 2026",Sunderland,1.89,3-0,0.13,Burnley
+2025/26,"Friday, February 06, 2026",Leeds,3.38,3-1,1.66,Nottingham Forest
+2025/26,"Saturday, February 07, 2026",Manchester United,2.17,2-0,0.59,Tottenham
+2025/26,"Saturday, February 07, 2026",Bournemouth,1.83,1-1,0.65,Aston Villa
+2025/26,"Saturday, February 07, 2026",Arsenal,1.19,3-0,0.43,Sunderland
+2025/26,"Saturday, February 07, 2026",Burnley,1.85,0-2,1.12,West Ham
+2025/26,"Saturday, February 07, 2026",Fulham,2.20,1-2,1.89,Everton
+2025/26,"Saturday, February 07, 2026",Wolverhampton Wanderers,1.11,1-3,3.76,Chelsea
+2025/26,"Saturday, February 07, 2026",Newcastle United,3.32,2-3,1.65,Brentford
+2025/26,"Sunday, February 08, 2026",Brighton,0.74,0-1,0.93,Crystal Palace
+2025/26,"Sunday, February 08, 2026",Liverpool,1.27,1-2,2.41,Manchester City
+2025/26,"Monday, January 26, 2026",Everton,0.89,1-1,1.68,Leeds
+2025/26,"Saturday, January 31, 2026",Brighton,1.43,1-1,1.28,Everton
+2025/26,"Saturday, January 31, 2026",Leeds,0.18,0-4,3.54,Arsenal
+2025/26,"Saturday, January 31, 2026",Wolverhampton Wanderers,2.10,0-2,1.59,Bournemouth
+2025/26,"Saturday, January 31, 2026",Chelsea,2.66,3-2,1.73,West Ham
+2025/26,"Saturday, January 31, 2026",Liverpool,3.10,4-1,0.28,Newcastle United
+2025/26,"Sunday, February 01, 2026",Aston Villa,2.15,0-1,0.31,Brentford
+2025/26,"Sunday, February 01, 2026",Manchester United,1.84,3-2,1.72,Fulham
+2025/26,"Sunday, February 01, 2026",Nottingham Forest,0.99,1-1,1.65,Crystal Palace
+2025/26,"Sunday, February 01, 2026",Tottenham,1.50,2-2,2.04,Manchester City
+2025/26,"Monday, January 19, 2026",Brighton,1.00,1-1,1.70,Bournemouth
+2025/26,"Saturday, January 24, 2026",West Ham,2.19,3-1,0.71,Sunderland
+2025/26,"Saturday, January 24, 2026",Burnley,1.55,2-2,2.59,Tottenham
+2025/26,"Saturday, January 24, 2026",Fulham,1.13,2-1,1.95,Brighton
+2025/26,"Saturday, January 24, 2026",Manchester City,1.07,2-0,0.54,Wolverhampton Wanderers
+2025/26,"Saturday, January 24, 2026",Bournemouth,3.31,3-2,0.94,Liverpool
+2025/26,"Sunday, January 25, 2026",Brentford,2.00,0-2,1.39,Nottingham Forest
+2025/26,"Sunday, January 25, 2026",Crystal Palace,2.42,1-3,3.09,Chelsea
+2025/26,"Sunday, January 25, 2026",Newcastle United,1.95,0-2,1.32,Aston Villa
+2025/26,"Sunday, January 25, 2026",Arsenal,1.42,2-3,0.64,Manchester United
+2025/26,"Saturday, January 17, 2026",Manchester United,3.07,2-0,0.39,Manchester City
+2025/26,"Saturday, January 17, 2026",Chelsea,1.62,2-0,1.48,Brentford
+2025/26,"Saturday, January 17, 2026",Leeds,2.17,1-0,0.26,Fulham
+2025/26,"Saturday, January 17, 2026",Liverpool,3.49,1-1,0.55,Burnley
+2025/26,"Saturday, January 17, 2026",Sunderland,1.85,2-1,1.15,Crystal Palace
+2025/26,"Saturday, January 17, 2026",Tottenham,1.65,1-2,2.77,West Ham
+2025/26,"Saturday, January 17, 2026",Nottingham Forest,0.32,0-0,2.86,Arsenal
+2025/26,"Sunday, January 18, 2026",Wolverhampton Wanderers,0.39,0-0,0.81,Newcastle United
+2025/26,"Sunday, January 18, 2026",Aston Villa,0.91,0-1,0.75,Everton
+2025/26,"Tuesday, January 06, 2026",West Ham,1.74,1-2,1.27,Nottingham Forest
+2025/26,"Wednesday, January 07, 2026",Everton,1.63,1-1,0.71,Wolverhampton Wanderers
+2025/26,"Wednesday, January 07, 2026",Bournemouth,1.19,3-2,1.63,Tottenham
+2025/26,"Wednesday, January 07, 2026",Brentford,3.86,3-0,1.51,Sunderland
+2025/26,"Wednesday, January 07, 2026",Crystal Palace,1.33,0-0,2.07,Aston Villa
+2025/26,"Wednesday, January 07, 2026",Fulham,1.06,2-1,2.45,Chelsea
+2025/26,"Wednesday, January 07, 2026",Manchester City,2.96,1-1,1.33,Brighton
+2025/26,"Wednesday, January 07, 2026",Burnley,0.32,2-2,2.52,Manchester United
+2025/26,"Wednesday, January 07, 2026",Newcastle United,2.43,4-3,2.35,Leeds
+2025/26,"Thursday, January 08, 2026",Arsenal,0.70,0-0,0.32,Liverpool
+2025/26,"Tuesday, December 30, 2025",Burnley,1.33,1-3,2.49,Newcastle United
+2025/26,"Tuesday, December 30, 2025",Chelsea,2.33,2-2,3.49,Bournemouth
+2025/26,"Tuesday, December 30, 2025",Nottingham Forest,1.75,0-2,1.70,Everton
+2025/26,"Tuesday, December 30, 2025",West Ham,2.28,2-2,3.09,Brighton
+2025/26,"Tuesday, December 30, 2025",Arsenal,4.41,4-1,2.94,Aston Villa
+2025/26,"Tuesday, December 30, 2025",Manchester United,1.13,1-1,1.22,Wolverhampton Wanderers
+2025/26,"Thursday, January 01, 2026",Crystal Palace,2.35,1-1,1.75,Fulham
+2025/26,"Thursday, January 01, 2026",Liverpool,1.68,0-0,0.16,Leeds
+2025/26,"Thursday, January 01, 2026",Brentford,0.56,0-0,0.61,Tottenham
+2025/26,"Thursday, January 01, 2026",Sunderland,0.96,0-0,2.44,Manchester City
+2025/26,"Saturday, January 03, 2026",Aston Villa,1.43,3-1,0.90,Nottingham Forest
+2025/26,"Saturday, January 03, 2026",Wolverhampton Wanderers,2.24,3-0,0.24,West Ham
+2025/26,"Saturday, January 03, 2026",Brighton,1.47,2-0,0.25,Burnley
+2025/26,"Saturday, January 03, 2026",Bournemouth,0.95,2-3,1.28,Arsenal
+2025/26,"Sunday, January 04, 2026",Leeds,0.97,1-1,1.95,Manchester United
+2025/26,"Sunday, January 04, 2026",Newcastle United,2.73,2-0,1.28,Crystal Palace
+2025/26,"Sunday, January 04, 2026",Tottenham,1.42,1-1,0.47,Sunderland
+2025/26,"Sunday, January 04, 2026",Everton,1.01,2-4,3.05,Brentford
+2025/26,"Sunday, January 04, 2026",Fulham,0.61,2-2,1.72,Liverpool
+2025/26,"Sunday, January 04, 2026",Manchester City,1.03,1-1,2.04,Chelsea
+2025/26,"Monday, December 22, 2025",Fulham,1.71,1-0,0.49,Nottingham Forest
+2025/26,"Friday, December 26, 2025",Manchester United,0.94,1-0,1.13,Newcastle United
+2025/26,"Saturday, December 27, 2025",Nottingham Forest,0.60,1-2,1.46,Manchester City
+2025/26,"Saturday, December 27, 2025",Arsenal,2.54,2-1,0.71,Brighton
+2025/26,"Saturday, December 27, 2025",Brentford,2.85,4-1,2.56,Bournemouth
+2025/26,"Saturday, December 27, 2025",Burnley,1.25,0-0,1.25,Everton
+2025/26,"Saturday, December 27, 2025",Liverpool,1.57,2-1,0.78,Wolverhampton Wanderers
+2025/26,"Saturday, December 27, 2025",West Ham,1.14,0-1,1.11,Fulham
+2025/26,"Saturday, December 27, 2025",Chelsea,1.97,1-2,2.06,Aston Villa
+2025/26,"Sunday, December 28, 2025",Sunderland,0.81,1-1,2.61,Leeds
+2025/26,"Sunday, December 28, 2025",Crystal Palace,0.93,0-1,0.87,Tottenham
+2025/26,"Monday, December 15, 2025",Manchester United,3.21,4-4,2.35,Bournemouth
+2025/26,"Saturday, December 20, 2025",Newcastle United,2.88,2-2,1.03,Chelsea
+2025/26,"Saturday, December 20, 2025",Bournemouth,1.82,1-1,0.48,Burnley
+2025/26,"Saturday, December 20, 2025",Brighton,0.92,0-0,1.31,Sunderland
+2025/26,"Saturday, December 20, 2025",Manchester City,3.58,3-0,1.02,West Ham
+2025/26,"Saturday, December 20, 2025",Wolverhampton Wanderers,1.27,0-2,1.56,Brentford
+2025/26,"Saturday, December 20, 2025",Tottenham,1.35,1-2,1.23,Liverpool
+2025/26,"Saturday, December 20, 2025",Everton,0.21,0-1,1.85,Arsenal
+2025/26,"Saturday, December 20, 2025",Leeds,2.91,4-1,1.53,Crystal Palace
+2025/26,"Sunday, December 21, 2025",Aston Villa,1.87,2-1,1.30,Manchester United
+2025/26,"Monday, December 08, 2025",Wolverhampton Wanderers,0.26,1-4,4.05,Manchester United
+2025/26,"Saturday, December 13, 2025",Chelsea,2.64,2-0,1.34,Everton
+2025/26,"Saturday, December 13, 2025",Liverpool,2.41,2-0,1.69,Brighton
+2025/26,"Saturday, December 13, 2025",Burnley,2.05,2-3,1.65,Fulham
+2025/26,"Saturday, December 13, 2025",Arsenal,1.62,2-1,0.62,Wolverhampton Wanderers
+2025/26,"Sunday, December 14, 2025",Crystal Palace,1.30,0-3,1.35,Manchester City
+2025/26,"Sunday, December 14, 2025",Nottingham Forest,2.33,3-0,0.38,Tottenham
+2025/26,"Sunday, December 14, 2025",Sunderland,0.63,1-0,0.17,Newcastle United
+2025/26,"Sunday, December 14, 2025",West Ham,1.28,2-3,0.60,Aston Villa
+2025/26,"Sunday, December 14, 2025",Brentford,0.70,1-1,1.63,Leeds
+2025/26,"Tuesday, December 02, 2025",Bournemouth,0.64,0-1,1.20,Everton
+2025/26,"Tuesday, December 02, 2025",Fulham,0.97,4-5,1.96,Manchester City
+2025/26,"Tuesday, December 02, 2025",Newcastle United,1.89,2-2,1.05,Tottenham
+2025/26,"Wednesday, December 03, 2025",Arsenal,2.63,2-0,0.59,Brentford
+2025/26,"Wednesday, December 03, 2025",Brighton,1.96,3-4,3.16,Aston Villa
+2025/26,"Wednesday, December 03, 2025",Burnley,1.17,0-1,0.99,Crystal Palace
+2025/26,"Wednesday, December 03, 2025",Wolverhampton Wanderers,1.02,0-1,1.12,Nottingham Forest
+2025/26,"Wednesday, December 03, 2025",Leeds,2.20,3-1,0.96,Chelsea
+2025/26,"Wednesday, December 03, 2025",Liverpool,1.38,1-1,0.71,Sunderland
+2025/26,"Thursday, December 04, 2025",Manchester United,2.28,1-1,1.37,West Ham
+2025/26,"Saturday, December 06, 2025",Aston Villa,2.72,2-1,1.86,Arsenal
+2025/26,"Saturday, December 06, 2025",Bournemouth,1.42,0-0,0.67,Chelsea
+2025/26,"Saturday, December 06, 2025",Everton,1.25,3-0,0.31,Nottingham Forest
+2025/26,"Saturday, December 06, 2025",Manchester City,2.42,3-0,0.63,Sunderland
+2025/26,"Saturday, December 06, 2025",Newcastle United,1.81,2-1,1.58,Burnley
+2025/26,"Saturday, December 06, 2025",Tottenham,2.42,2-0,0.47,Brentford
+2025/26,"Saturday, December 06, 2025",Leeds,1.79,3-3,2.05,Liverpool
+2025/26,"Sunday, December 07, 2025",Brighton,2.10,1-1,1.71,West Ham
+2025/26,"Sunday, December 07, 2025",Fulham,0.77,1-2,1.71,Crystal Palace
+2025/26,"Monday, November 24, 2025",Manchester United,2.27,0-1,0.16,Everton
+2025/26,"Saturday, November 29, 2025",Brentford,3.72,3-1,0.87,Burnley
+2025/26,"Saturday, November 29, 2025",Manchester City,2.85,3-2,1.75,Leeds
+2025/26,"Saturday, November 29, 2025",Sunderland,1.17,3-2,1.79,Bournemouth
+2025/26,"Saturday, November 29, 2025",Everton,1.01,1-4,2.46,Newcastle United
+2025/26,"Saturday, November 29, 2025",Tottenham,1.04,1-2,0.49,Fulham
+2025/26,"Sunday, November 30, 2025",Crystal Palace,2.14,1-2,1.48,Manchester United
+2025/26,"Sunday, November 30, 2025",Aston Villa,1.15,1-0,0.69,Wolverhampton Wanderers
+2025/26,"Sunday, November 30, 2025",Nottingham Forest,0.96,0-2,2.06,Brighton
+2025/26,"Sunday, November 30, 2025",West Ham,0.36,0-2,1.57,Liverpool
+2025/26,"Sunday, November 30, 2025",Chelsea,0.79,1-1,1.23,Arsenal
+2025/26,"Saturday, November 22, 2025",Burnley,0.66,0-2,1.72,Chelsea
+2025/26,"Saturday, November 22, 2025",Bournemouth,3.48,2-2,0.39,West Ham
+2025/26,"Saturday, November 22, 2025",Brighton,0.98,2-1,2.20,Brentford
+2025/26,"Saturday, November 22, 2025",Fulham,2.84,1-0,0.22,Sunderland
+2025/26,"Saturday, November 22, 2025",Liverpool,1.79,0-3,1.19,Nottingham Forest
+2025/26,"Saturday, November 22, 2025",Wolverhampton Wanderers,1.66,0-2,1.45,Crystal Palace
+2025/26,"Saturday, November 22, 2025",Newcastle United,2.41,2-1,2.46,Manchester City
+2025/26,"Sunday, November 23, 2025",Leeds,1.85,1-2,1.36,Aston Villa
+2025/26,"Sunday, November 23, 2025",Arsenal,2.28,4-1,0.03,Tottenham
+2025/26,"Monday, November 03, 2025",Sunderland,1.18,1-1,1.01,Everton
+2025/26,"Saturday, November 08, 2025",Tottenham,1.36,2-2,0.82,Manchester United
+2025/26,"Saturday, November 08, 2025",Everton,2.31,2-0,0.42,Fulham
+2025/26,"Saturday, November 08, 2025",West Ham,2.97,3-2,1.87,Burnley
+2025/26,"Saturday, November 08, 2025",Sunderland,1.20,2-2,2.33,Arsenal
+2025/26,"Saturday, November 08, 2025",Chelsea,3.98,3-0,0.11,Wolverhampton Wanderers
+2025/26,"Sunday, November 09, 2025",Aston Villa,1.88,4-0,2.01,Bournemouth
+2025/26,"Sunday, November 09, 2025",Brentford,2.74,3-1,0.43,Newcastle United
+2025/26,"Sunday, November 09, 2025",Crystal Palace,0.84,0-0,0.64,Brighton
+2025/26,"Sunday, November 09, 2025",Nottingham Forest,2.49,3-1,0.42,Leeds
+2025/26,"Sunday, November 09, 2025",Manchester City,1.60,3-0,1.03,Liverpool
+2025/26,"Saturday, November 01, 2025",Brighton,2.64,3-0,0.36,Leeds
+2025/26,"Saturday, November 01, 2025",Burnley,0.68,0-2,2.52,Arsenal
+2025/26,"Saturday, November 01, 2025",Crystal Palace,0.73,2-0,0.82,Brentford
+2025/26,"Saturday, November 01, 2025",Fulham,1.91,3-0,0.21,Wolverhampton Wanderers
+2025/26,"Saturday, November 01, 2025",Nottingham Forest,1.55,2-2,0.92,Manchester United
+2025/26,"Saturday, November 01, 2025",Tottenham,0.15,0-1,3.34,Chelsea
+2025/26,"Saturday, November 01, 2025",Liverpool,1.47,2-0,0.44,Aston Villa
+2025/26,"Sunday, November 02, 2025",West Ham,1.41,3-1,0.52,Newcastle United
+2025/26,"Sunday, November 02, 2025",Manchester City,2.49,3-1,0.90,Bournemouth
+2025/26,"Monday, October 20, 2025",West Ham,0.26,0-2,3.47,Brentford
+2025/26,"Friday, October 24, 2025",Leeds,2.22,2-1,0.50,West Ham
+2025/26,"Saturday, October 25, 2025",Chelsea,1.21,1-2,1.55,Sunderland
+2025/26,"Saturday, October 25, 2025",Newcastle United,2.77,2-1,1.52,Fulham
+2025/26,"Saturday, October 25, 2025",Manchester United,1.96,4-2,0.95,Brighton
+2025/26,"Saturday, October 25, 2025",Brentford,3.27,3-2,2.12,Liverpool
+2025/26,"Sunday, October 26, 2025",Bournemouth,0.66,2-0,0.31,Nottingham Forest
+2025/26,"Sunday, October 26, 2025",Arsenal,0.86,1-0,0.35,Crystal Palace
+2025/26,"Sunday, October 26, 2025",Aston Villa,0.84,1-0,1.37,Manchester City
+2025/26,"Sunday, October 26, 2025",Wolverhampton Wanderers,2.58,2-3,1.55,Burnley
+2025/26,"Sunday, October 26, 2025",Everton,1.40,0-3,2.09,Tottenham
+2025/26,"Saturday, October 18, 2025",Nottingham Forest,2.06,0-3,2.56,Chelsea
+2025/26,"Saturday, October 18, 2025",Brighton,0.86,2-1,1.28,Newcastle United
+2025/26,"Saturday, October 18, 2025",Burnley,0.51,2-0,2.33,Leeds
+2025/26,"Saturday, October 18, 2025",Crystal Palace,4.56,3-3,2.05,Bournemouth
+2025/26,"Saturday, October 18, 2025",Manchester City,2.48,2-0,0.79,Everton
+2025/26,"Saturday, October 18, 2025",Sunderland,1.02,2-0,0.68,Wolverhampton Wanderers
+2025/26,"Saturday, October 18, 2025",Fulham,0.50,0-1,2.08,Arsenal
+2025/26,"Sunday, October 19, 2025",Tottenham,1.51,1-2,0.35,Aston Villa
+2025/26,"Sunday, October 19, 2025",Liverpool,2.61,1-2,2.53,Manchester United
+2025/26,"Monday, September 29, 2025",Everton,0.91,1-1,0.78,West Ham
+2025/26,"Friday, October 03, 2025",Bournemouth,1.33,3-1,0.84,Fulham
+2025/26,"Saturday, October 04, 2025",Leeds,1.48,1-2,0.69,Tottenham
+2025/26,"Saturday, October 04, 2025",Arsenal,3.06,2-0,0.86,West Ham
+2025/26,"Saturday, October 04, 2025",Manchester United,1.93,2-0,0.81,Sunderland
+2025/26,"Saturday, October 04, 2025",Chelsea,1.24,2-1,2.06,Liverpool
+2025/26,"Sunday, October 05, 2025",Aston Villa,1.74,2-1,0.50,Burnley
+2025/26,"Sunday, October 05, 2025",Everton,2.14,2-1,2.18,Crystal Palace
+2025/26,"Sunday, October 05, 2025",Newcastle United,3.82,2-0,0.34,Nottingham Forest
+2025/26,"Sunday, October 05, 2025",Wolverhampton Wanderers,0.37,1-1,1.39,Brighton
+2025/26,"Sunday, October 05, 2025",Brentford,0.69,0-1,1.10,Manchester City
+2025/26,"Saturday, September 27, 2025",Brentford,2.79,3-1,2.24,Manchester United
+2025/26,"Saturday, September 27, 2025",Chelsea,2.03,1-3,2.48,Brighton
+2025/26,"Saturday, September 27, 2025",Crystal Palace,3.53,2-1,3.10,Liverpool
+2025/26,"Saturday, September 27, 2025",Leeds,2.05,2-2,1.06,Bournemouth
+2025/26,"Saturday, September 27, 2025",Manchester City,3.22,5-1,0.51,Burnley
+2025/26,"Saturday, September 27, 2025",Nottingham Forest,1.42,0-1,1.94,Sunderland
+2025/26,"Saturday, September 27, 2025",Tottenham,0.82,1-1,1.16,Wolverhampton Wanderers
+2025/26,"Sunday, September 28, 2025",Aston Villa,1.37,3-1,0.95,Fulham
+2025/26,"Sunday, September 28, 2025",Newcastle United,0.74,1-2,2.07,Arsenal
+2025/26,"Saturday, September 20, 2025",Liverpool,1.06,2-1,0.72,Everton
+2025/26,"Saturday, September 20, 2025",West Ham,0.47,1-2,2.34,Crystal Palace
+2025/26,"Saturday, September 20, 2025",Wolverhampton Wanderers,1.57,1-3,0.46,Leeds
+2025/26,"Saturday, September 20, 2025",Brighton,1.40,2-2,1.19,Tottenham
+2025/26,"Saturday, September 20, 2025",Burnley,1.14,1-1,0.83,Nottingham Forest
+2025/26,"Saturday, September 20, 2025",Manchester United,1.34,2-1,0.47,Chelsea
+2025/26,"Saturday, September 20, 2025",Fulham,1.52,3-1,0.83,Brentford
+2025/26,"Sunday, September 21, 2025",Bournemouth,0.55,0-0,0.15,Newcastle United
+2025/26,"Sunday, September 21, 2025",Sunderland,0.94,1-1,0.94,Aston Villa
+2025/26,"Sunday, September 21, 2025",Arsenal,0.72,1-1,1.12,Manchester City
+2025/26,"Saturday, September 13, 2025",Arsenal,2.88,3-0,0.29,Nottingham Forest
+2025/26,"Saturday, September 13, 2025",Newcastle United,1.19,1-0,0.38,Wolverhampton Wanderers
+2025/26,"Saturday, September 13, 2025",Bournemouth,1.44,2-1,0.62,Brighton
+2025/26,"Saturday, September 13, 2025",Crystal Palace,1.76,0-0,0.35,Sunderland
+2025/26,"Saturday, September 13, 2025",Everton,1.89,0-0,0.35,Aston Villa
+2025/26,"Saturday, September 13, 2025",Fulham,1.14,1-0,0.83,Leeds
+2025/26,"Saturday, September 13, 2025",West Ham,0.79,0-3,1.51,Tottenham
+2025/26,"Saturday, September 13, 2025",Brentford,1.18,2-2,0.76,Chelsea
+2025/26,"Sunday, September 14, 2025",Burnley,0.17,0-1,2.79,Liverpool
+2025/26,"Sunday, September 14, 2025",Manchester City,2.00,3-0,1.52,Manchester United
+2025/26,"Monday, August 25, 2025",Newcastle United,1.96,2-3,0.65,Liverpool
+2025/26,"Saturday, August 30, 2025",Chelsea,2.43,2-0,0.74,Fulham
+2025/26,"Saturday, August 30, 2025",Tottenham,0.17,0-1,2.12,Bournemouth
+2025/26,"Saturday, August 30, 2025",Wolverhampton Wanderers,0.94,2-3,2.04,Everton
+2025/26,"Saturday, August 30, 2025",Sunderland,1.57,2-1,1.45,Brentford
+2025/26,"Saturday, August 30, 2025",Manchester United,4.02,3-2,1.33,Burnley
+2025/26,"Saturday, August 30, 2025",Leeds,0.68,0-0,0.30,Newcastle United
+2025/26,"Sunday, August 31, 2025",Nottingham Forest,0.72,0-3,2.24,West Ham
+2025/26,"Sunday, August 31, 2025",Brighton,2.21,2-1,2.13,Manchester City
+2025/26,"Sunday, August 31, 2025",Liverpool,0.48,1-0,0.49,Arsenal
+2025/26,"Sunday, August 31, 2025",Aston Villa,1.21,0-3,2.60,Crystal Palace
+2025/26,"Monday, August 18, 2025",Leeds,2.38,1-0,0.67,Everton
+2025/26,"Friday, August 22, 2025",West Ham,0.98,1-5,3.95,Chelsea
+2025/26,"Saturday, August 23, 2025",Manchester City,1.25,0-2,1.28,Tottenham
+2025/26,"Saturday, August 23, 2025",Brentford,1.13,1-0,0.98,Aston Villa
+2025/26,"Saturday, August 23, 2025",Burnley,1.00,2-0,1.12,Sunderland
+2025/26,"Saturday, August 23, 2025",Bournemouth,1.78,1-0,0.37,Wolverhampton Wanderers
+2025/26,"Saturday, August 23, 2025",Arsenal,2.74,5-0,0.16,Leeds
+2025/26,"Sunday, August 24, 2025",Crystal Palace,1.10,1-1,1.33,Nottingham Forest
+2025/26,"Sunday, August 24, 2025",Everton,1.80,2-0,2.08,Brighton
+2025/26,"Sunday, August 24, 2025",Fulham,1.65,1-1,1.55,Manchester United
+2025/26,"Friday, August 15, 2025",Liverpool,2.33,4-2,1.57,Bournemouth
+2025/26,"Saturday, August 16, 2025",Aston Villa,0.32,0-0,1.40,Newcastle United
+2025/26,"Saturday, August 16, 2025",Brighton,1.44,1-1,0.90,Fulham
+2025/26,"Saturday, August 16, 2025",Sunderland,0.72,3-0,0.56,West Ham
+2025/26,"Saturday, August 16, 2025",Tottenham,1.98,3-0,0.73,Burnley
+2025/26,"Saturday, August 16, 2025",Wolverhampton Wanderers,0.52,0-4,2.30,Manchester City
+2025/26,"Sunday, August 17, 2025",Chelsea,1.37,0-0,1.03,Crystal Palace
+2025/26,"Sunday, August 17, 2025",Nottingham Forest,1.76,3-1,1.33,Brentford
+2025/26,"Sunday, August 17, 2025",Manchester United,1.38,0-1,1.33,Arsenal
