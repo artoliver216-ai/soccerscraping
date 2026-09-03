@@ -236,6 +236,47 @@ built and then removed.
 from that run. A `--refit-every 1` pass matches these numbers to ~0.3%,
 so the cheaper default cadence loses nothing here.
 
+## `backtest_strategy.py`
+
+`backtest.py` asks *is the model calibrated?*; this asks *would betting
+its signals have made money?* It replays the full `find_ev_bets.py` loop
+over 2025/26 against real **closing** 1X2 odds from
+[football-data.co.uk](https://www.football-data.co.uk) (the `MaxC`
+columns — best price at kick-off; fetched once to `odds_2526.csv`), with
+rolling model refits (only prior matches), 2% exchange commission on
+winnings, and a flat 1-unit stake per qualifying bet.
+
+```bash
+python backtest_strategy.py
+python backtest_strategy.py --min-ev 0.10 --stake kelly
+```
+
+Reports total ROI %, win rate, an ASCII profit curve (full ledger →
+`strategy_curve.csv`), and max drawdown. Betting starts once the model
+has ~150 matches to fit (`--min-train`), so it covers Dec 2025 → May
+2026.
+
+**Result: the system does not beat closing lines.** At the default +3%
+EV threshold it placed 237 bets for **−1.6% ROI** (2% commission is the
+difference between that and roughly break-even). The model's *claimed*
+average edge was +21% while realised ROI was −2% — its EV estimates are
+badly inflated, exactly the mid-range over-confidence `backtest.py`
+flags. Consequences:
+
+| variant | bets | ROI | max DD |
+|---|---|---|---|
+| default (min-ev 3%, flat) | 237 | −1.6% | 24% |
+| min-ev 5% | 210 | +0.3% | 21% |
+| min-ev 10% | 163 | +9.5% | 13% |
+| Kelly staking (min-ev 3%) | 237 | −5.9% | 45% |
+| no commission (min-ev 3%) | 266 | +9.5% | 16% |
+
+Only the model's *largest* disagreements with the market (min-ev ≥ 10%)
+show a profit, and even that is a small, high-variance sample. Kelly is
+actively harmful here because it sizes up on the inflated edges. Treat
+these as backtested history on one season of one league, not a forward
+edge.
+
 ## Data files
 
 - `fbref_xg.csv` — scraped match data (output of step 1).
@@ -244,6 +285,10 @@ so the cheaper default cadence loses nothing here.
   `rho`, `xi`, and `min_matches`.
 - `backtest_results.csv` — per-match predicted vs base-rate probabilities
   from `backtest.py --refit-every 1` (see above).
+- `odds_2526.csv` — 2025/26 closing odds from football-data.co.uk, input
+  to `backtest_strategy.py` (auto-fetched if absent).
+- `strategy_curve.csv` — per-bet ledger from a default `backtest_strategy.py`
+  run (237 bets, Dec 2025 → May 2026).
 
 `fbref_xg.csv` and `model_params.json` are committed so `predict_match.py`
 can be run without re-scraping or re-fitting.

@@ -1,0 +1,238 @@
+Date,Match,Selection,Odds,NetOdds,ModelProb,EV,Stake,Won,Profit,Bankroll,CumProfit
+2025-12-13,Burnley vs Fulham,Home,4.1,4.038,0.255,0.031,1.0,False,-1.0,99.0,-1.0
+2025-12-13,Arsenal vs Wolverhampton Wanderers,Draw,9.5,9.33,0.115,0.076,1.0,False,-1.0,98.0,-2.0
+2025-12-13,Chelsea vs Everton,Home,1.75,1.735,0.6,0.041,1.0,True,0.735,98.73,-1.265
+2025-12-14,Crystal Palace vs Manchester City,Home,4.2,4.136,0.36,0.488,1.0,False,-1.0,97.73,-2.265
+2025-12-14,Nottingham Forest vs Tottenham,Draw,3.4,3.352,0.332,0.112,1.0,False,-1.0,96.73,-3.265
+2025-12-14,Sunderland vs Newcastle United,Draw,3.5,3.45,0.319,0.102,1.0,False,-1.0,95.73,-4.265
+2025-12-14,West Ham vs Aston Villa,Home,3.6,3.548,0.3,0.065,1.0,False,-1.0,94.73,-5.265
+2025-12-14,Brentford vs Leeds,Home,2.23,2.205,0.596,0.315,1.0,False,-1.0,93.73,-6.265
+2025-12-20,Everton vs Arsenal,Home,7.0,6.88,0.165,0.138,1.0,False,-1.0,92.73,-7.265
+2025-12-20,Everton vs Arsenal,Draw,4.2,4.136,0.275,0.137,1.0,False,-1.0,91.73,-8.265
+2025-12-20,Wolverhampton Wanderers vs Brentford,Away,2.2,2.176,0.573,0.247,1.0,True,1.176,92.91,-7.089
+2025-12-20,Tottenham vs Liverpool,Draw,3.7,3.646,0.29,0.059,1.0,False,-1.0,91.91,-8.089
+2025-12-20,Brighton vs Sunderland,Home,1.95,1.931,0.549,0.061,1.0,False,-1.0,90.91,-9.089
+2025-12-20,Bournemouth vs Burnley,Home,1.5,1.49,0.747,0.112,1.0,False,-1.0,89.91,-10.089
+2025-12-20,Newcastle United vs Chelsea,Home,2.9,2.862,0.381,0.091,1.0,False,-1.0,88.91,-11.089
+2025-12-20,Manchester City vs West Ham,Draw,8.0,7.86,0.132,0.036,1.0,False,-1.0,87.91,-12.089
+2025-12-21,Aston Villa vs Manchester United,Away,3.7,3.646,0.471,0.718,1.0,False,-1.0,86.91,-13.089
+2025-12-22,Fulham vs Nottingham Forest,Home,2.63,2.597,0.45,0.169,1.0,True,1.597,88.51,-11.492
+2025-12-26,Manchester United vs Newcastle United,Home,2.5,2.47,0.506,0.25,1.0,True,1.47,89.98,-10.022
+2025-12-27,Chelsea vs Aston Villa,Home,1.81,1.794,0.595,0.067,1.0,False,-1.0,88.98,-11.022
+2025-12-27,Burnley vs Everton,Home,3.8,3.744,0.283,0.059,1.0,False,-1.0,87.98,-12.022
+2025-12-27,Liverpool vs Wolverhampton Wanderers,Draw,7.0,6.88,0.175,0.204,1.0,False,-1.0,86.98,-13.022
+2025-12-27,Arsenal vs Brighton,Draw,5.75,5.655,0.192,0.088,1.0,False,-1.0,85.98,-14.022
+2025-12-27,Nottingham Forest vs Manchester City,Draw,4.2,4.136,0.25,0.035,1.0,False,-1.0,84.98,-15.022
+2025-12-27,Brentford vs Bournemouth,Home,2.33,2.303,0.5,0.151,1.0,True,1.303,86.28,-13.719
+2025-12-28,Crystal Palace vs Tottenham,Home,2.25,2.225,0.584,0.298,1.0,False,-1.0,85.28,-14.719
+2025-12-30,Manchester United vs Wolverhampton Wanderers,Home,1.4,1.392,0.755,0.051,1.0,False,-1.0,84.28,-15.719
+2025-12-30,Burnley vs Newcastle United,Draw,4.33,4.263,0.254,0.081,1.0,False,-1.0,83.28,-16.719
+2025-12-30,Chelsea vs Bournemouth,Draw,4.6,4.528,0.243,0.099,1.0,True,3.528,86.81,-13.191
+2025-12-30,Chelsea vs Bournemouth,Away,5.8,5.704,0.255,0.456,1.0,False,-1.0,85.81,-14.191
+2025-12-30,Nottingham Forest vs Everton,Draw,3.5,3.45,0.313,0.08,1.0,False,-1.0,84.81,-15.191
+2025-12-30,Nottingham Forest vs Everton,Away,4.4,4.332,0.308,0.332,1.0,True,3.332,88.14,-11.859
+2025-12-30,Arsenal vs Aston Villa,Draw,5.25,5.165,0.201,0.039,1.0,False,-1.0,87.14,-12.859
+2026-01-01,Brentford vs Tottenham,Home,2.5,2.47,0.556,0.374,1.0,False,-1.0,86.14,-13.859
+2026-01-01,Sunderland vs Manchester City,Home,8.0,7.86,0.172,0.355,1.0,False,-1.0,85.14,-14.859
+2026-01-01,Sunderland vs Manchester City,Draw,5.0,4.92,0.271,0.333,1.0,True,3.92,89.06,-10.939
+2026-01-01,Crystal Palace vs Fulham,Home,2.28,2.254,0.568,0.281,1.0,False,-1.0,88.06,-11.939
+2026-01-01,Liverpool vs Leeds,Draw,4.6,4.528,0.252,0.143,1.0,True,3.528,91.59,-8.411
+2026-01-01,Liverpool vs Leeds,Away,7.0,6.88,0.255,0.754,1.0,False,-1.0,90.59,-9.411
+2026-01-03,Brighton vs Burnley,Home,1.48,1.47,0.705,0.037,1.0,True,0.47,91.06,-8.941
+2026-01-03,Wolverhampton Wanderers vs West Ham,Home,2.7,2.666,0.397,0.059,1.0,True,1.666,92.73,-7.275
+2026-01-03,Wolverhampton Wanderers vs West Ham,Draw,3.5,3.45,0.313,0.081,1.0,False,-1.0,91.73,-8.275
+2026-01-03,Bournemouth vs Arsenal,Home,6.5,6.39,0.238,0.518,1.0,False,-1.0,90.73,-9.275
+2026-01-03,Bournemouth vs Arsenal,Draw,4.6,4.528,0.264,0.197,1.0,False,-1.0,89.73,-10.275
+2026-01-04,Leeds vs Manchester United,Home,2.8,2.764,0.405,0.119,1.0,False,-1.0,88.73,-11.275
+2026-01-04,Everton vs Brentford,Away,3.15,3.107,0.403,0.252,1.0,True,2.107,90.83,-9.168
+2026-01-04,Newcastle United vs Crystal Palace,Draw,4.1,4.038,0.279,0.127,1.0,False,-1.0,89.83,-10.168
+2026-01-04,Newcastle United vs Crystal Palace,Away,5.1,5.018,0.26,0.303,1.0,False,-1.0,88.83,-11.168
+2026-01-04,Tottenham vs Sunderland,Draw,3.5,3.45,0.346,0.193,1.0,True,2.45,91.28,-8.718
+2026-01-04,Fulham vs Liverpool,Home,4.25,4.185,0.294,0.232,1.0,False,-1.0,90.28,-9.718
+2026-01-04,Fulham vs Liverpool,Draw,3.75,3.695,0.286,0.055,1.0,True,2.695,92.98,-7.023
+2026-01-07,Newcastle United vs Leeds,Draw,4.0,3.94,0.279,0.098,1.0,False,-1.0,91.98,-8.023
+2026-01-07,Newcastle United vs Leeds,Away,6.0,5.9,0.222,0.31,1.0,False,-1.0,90.98,-9.023
+2026-01-07,Burnley vs Manchester United,Away,1.75,1.735,0.648,0.124,1.0,False,-1.0,89.98,-10.023
+2026-01-07,Fulham vs Chelsea,Home,3.7,3.646,0.303,0.106,1.0,True,2.646,92.62,-7.377
+2026-01-07,Bournemouth vs Tottenham,Home,2.25,2.225,0.5,0.113,1.0,True,1.225,93.85,-6.152
+2026-01-07,Bournemouth vs Tottenham,Draw,3.6,3.548,0.291,0.031,1.0,False,-1.0,92.85,-7.152
+2026-01-07,Crystal Palace vs Aston Villa,Home,3.05,3.009,0.533,0.604,1.0,False,-1.0,91.85,-8.152
+2026-01-07,Brentford vs Sunderland,Home,2.05,2.029,0.631,0.28,1.0,True,1.029,92.88,-7.123
+2026-01-07,Everton vs Wolverhampton Wanderers,Draw,3.55,3.499,0.305,0.067,1.0,True,2.499,95.38,-4.624
+2026-01-07,Everton vs Wolverhampton Wanderers,Away,5.0,4.92,0.216,0.061,1.0,False,-1.0,94.38,-5.624
+2026-01-17,Tottenham vs West Ham,Home,1.95,1.931,0.571,0.103,1.0,False,-1.0,93.38,-6.624
+2026-01-17,Sunderland vs Crystal Palace,Away,3.3,3.254,0.451,0.468,1.0,False,-1.0,92.38,-7.624
+2026-01-17,Manchester United vs Manchester City,Home,3.25,3.205,0.374,0.198,1.0,True,2.205,94.58,-5.419
+2026-01-17,Leeds vs Fulham,Home,2.38,2.352,0.535,0.258,1.0,True,1.352,95.93,-4.067
+2026-01-17,Chelsea vs Brentford,Away,4.2,4.136,0.312,0.291,1.0,False,-1.0,94.93,-5.067
+2026-01-17,Liverpool vs Burnley,Draw,6.75,6.635,0.158,0.047,1.0,True,5.635,100.57,0.568
+2026-01-18,Wolverhampton Wanderers vs Newcastle United,Draw,4.1,4.038,0.297,0.198,1.0,True,3.038,103.61,3.606
+2026-01-18,Aston Villa vs Everton,Draw,4.0,3.94,0.265,0.045,1.0,False,-1.0,102.61,2.606
+2026-01-18,Aston Villa vs Everton,Away,6.5,6.39,0.23,0.469,1.0,True,5.39,108.0,7.996
+2026-01-19,Brighton vs Bournemouth,Away,3.75,3.695,0.352,0.301,1.0,False,-1.0,107.0,6.996
+2026-01-24,Bournemouth vs Liverpool,Home,4.5,4.43,0.371,0.646,1.0,True,3.43,110.43,10.426
+2026-01-24,Bournemouth vs Liverpool,Draw,4.1,4.038,0.273,0.104,1.0,False,-1.0,109.43,9.426
+2026-01-24,Manchester City vs Wolverhampton Wanderers,Draw,6.1,5.998,0.197,0.184,1.0,False,-1.0,108.43,8.426
+2026-01-24,West Ham vs Sunderland,Away,3.4,3.352,0.321,0.077,1.0,False,-1.0,107.43,7.426
+2026-01-25,Brentford vs Nottingham Forest,Home,1.9,1.882,0.668,0.257,1.0,False,-1.0,106.43,6.426
+2026-01-25,Crystal Palace vs Chelsea,Home,3.6,3.548,0.394,0.399,1.0,False,-1.0,105.43,5.426
+2026-01-25,Newcastle United vs Aston Villa,Home,2.22,2.196,0.533,0.17,1.0,False,-1.0,104.43,4.426
+2026-01-25,Arsenal vs Manchester United,Draw,4.5,4.43,0.241,0.067,1.0,False,-1.0,103.43,3.426
+2026-01-26,Everton vs Leeds,Away,3.15,3.107,0.4,0.244,1.0,False,-1.0,102.43,2.426
+2026-01-31,Chelsea vs West Ham,Home,1.62,1.608,0.726,0.167,1.0,True,0.608,103.04,3.034
+2026-01-31,Wolverhampton Wanderers vs Bournemouth,Away,2.45,2.421,0.503,0.217,1.0,True,1.421,104.46,4.455
+2026-01-31,Liverpool vs Newcastle United,Draw,4.4,4.332,0.283,0.226,1.0,False,-1.0,103.46,3.455
+2026-01-31,Liverpool vs Newcastle United,Away,5.0,4.92,0.283,0.393,1.0,False,-1.0,102.46,2.455
+2026-01-31,Leeds vs Arsenal,Home,6.5,6.39,0.206,0.316,1.0,False,-1.0,101.46,1.455
+2026-01-31,Leeds vs Arsenal,Draw,4.2,4.136,0.282,0.165,1.0,False,-1.0,100.46,0.455
+2026-02-01,Tottenham vs Manchester City,Home,5.5,5.41,0.259,0.402,1.0,False,-1.0,99.46,-0.545
+2026-02-01,Tottenham vs Manchester City,Draw,4.2,4.136,0.294,0.214,1.0,True,3.136,102.59,2.591
+2026-02-01,Nottingham Forest vs Crystal Palace,Away,4.0,3.94,0.423,0.666,1.0,False,-1.0,101.59,1.591
+2026-02-01,Aston Villa vs Brentford,Away,3.3,3.254,0.397,0.293,1.0,True,2.254,103.85,3.845
+2026-02-01,Manchester United vs Fulham,Home,1.55,1.539,0.678,0.043,1.0,True,0.539,104.39,4.384
+2026-02-06,Leeds vs Nottingham Forest,Home,2.22,2.196,0.568,0.248,1.0,True,1.196,105.58,5.58
+2026-02-07,Wolverhampton Wanderers vs Chelsea,Home,5.75,5.655,0.224,0.267,1.0,False,-1.0,104.58,4.58
+2026-02-07,Wolverhampton Wanderers vs Chelsea,Draw,4.33,4.263,0.274,0.168,1.0,False,-1.0,103.58,3.58
+2026-02-07,Manchester United vs Tottenham,Draw,4.6,4.528,0.246,0.115,1.0,False,-1.0,102.58,2.58
+2026-02-07,Bournemouth vs Aston Villa,Home,2.9,2.862,0.508,0.455,1.0,False,-1.0,101.58,1.58
+2026-02-07,Fulham vs Everton,Draw,3.6,3.548,0.309,0.096,1.0,False,-1.0,100.58,0.58
+2026-02-07,Newcastle United vs Brentford,Draw,4.0,3.94,0.268,0.057,1.0,False,-1.0,99.58,-0.42
+2026-02-07,Newcastle United vs Brentford,Away,3.9,3.842,0.3,0.153,1.0,True,2.842,102.42,2.422
+2026-02-08,Liverpool vs Manchester City,Draw,4.0,3.94,0.266,0.047,1.0,False,-1.0,101.42,1.422
+2026-02-08,Brighton vs Crystal Palace,Away,3.55,3.499,0.323,0.131,1.0,True,2.499,103.92,3.921
+2026-02-10,Chelsea vs Leeds,Away,6.5,6.39,0.24,0.537,1.0,False,-1.0,102.92,2.921
+2026-02-10,Everton vs Bournemouth,Away,3.1,3.058,0.441,0.349,1.0,True,2.058,104.98,4.979
+2026-02-10,Tottenham vs Newcastle United,Draw,3.75,3.695,0.312,0.152,1.0,False,-1.0,103.98,3.979
+2026-02-10,West Ham vs Manchester United,Away,1.73,1.715,0.608,0.043,1.0,False,-1.0,102.98,2.979
+2026-02-11,Manchester City vs Fulham,Draw,5.5,5.41,0.204,0.104,1.0,False,-1.0,101.98,1.979
+2026-02-11,Nottingham Forest vs Wolverhampton Wanderers,Draw,4.0,3.94,0.32,0.26,1.0,True,2.94,104.92,4.919
+2026-02-11,Nottingham Forest vs Wolverhampton Wanderers,Away,5.1,5.018,0.251,0.259,1.0,False,-1.0,103.92,3.919
+2026-02-11,Crystal Palace vs Burnley,Home,1.48,1.47,0.734,0.079,1.0,False,-1.0,102.92,2.919
+2026-02-11,Sunderland vs Liverpool,Draw,4.0,3.94,0.288,0.137,1.0,False,-1.0,101.92,1.919
+2026-02-12,Brentford vs Arsenal,Home,5.6,5.508,0.194,0.068,1.0,False,-1.0,100.92,0.919
+2026-02-18,Wolverhampton Wanderers vs Arsenal,Home,14.0,13.74,0.085,0.172,1.0,False,-1.0,99.92,-0.081
+2026-02-18,Wolverhampton Wanderers vs Arsenal,Draw,6.5,6.39,0.23,0.467,1.0,True,5.39,105.31,5.309
+2026-02-21,Aston Villa vs Leeds,Away,4.5,4.43,0.304,0.348,1.0,False,-1.0,104.31,4.309
+2026-02-21,Brentford vs Brighton,Home,2.3,2.274,0.542,0.232,1.0,False,-1.0,103.31,3.309
+2026-02-21,Chelsea vs Burnley,Home,1.26,1.255,0.825,0.035,1.0,False,-1.0,102.31,2.309
+2026-02-21,West Ham vs Bournemouth,Away,2.6,2.568,0.504,0.295,1.0,False,-1.0,101.31,1.309
+2026-02-21,Manchester City vs Newcastle United,Draw,4.8,4.724,0.251,0.187,1.0,False,-1.0,100.31,0.309
+2026-02-21,Manchester City vs Newcastle United,Away,5.8,5.704,0.227,0.296,1.0,False,-1.0,99.31,-0.691
+2026-02-22,Crystal Palace vs Wolverhampton Wanderers,Home,1.83,1.813,0.633,0.148,1.0,True,0.813,100.12,0.122
+2026-02-22,Sunderland vs Fulham,Draw,3.3,3.254,0.325,0.056,1.0,False,-1.0,99.12,-0.878
+2026-02-22,Tottenham vs Arsenal,Home,7.8,7.664,0.149,0.143,1.0,False,-1.0,98.12,-1.878
+2026-02-22,Tottenham vs Arsenal,Draw,4.5,4.43,0.28,0.239,1.0,False,-1.0,97.12,-2.878
+2026-02-27,Wolverhampton Wanderers vs Aston Villa,Home,4.8,4.724,0.251,0.188,1.0,True,3.724,100.85,0.846
+2026-02-27,Wolverhampton Wanderers vs Aston Villa,Draw,3.85,3.793,0.313,0.188,1.0,False,-1.0,99.85,-0.154
+2026-02-28,Bournemouth vs Sunderland,Home,1.83,1.813,0.607,0.101,1.0,False,-1.0,98.85,-1.154
+2026-02-28,Burnley vs Brentford,Away,1.8,1.784,0.628,0.12,1.0,True,0.784,99.63,-0.37
+2026-02-28,Newcastle United vs Everton,Home,1.86,1.843,0.563,0.038,1.0,False,-1.0,98.63,-1.37
+2026-02-28,Leeds vs Manchester City,Home,5.0,4.92,0.307,0.51,1.0,False,-1.0,97.63,-2.37
+2026-02-28,Leeds vs Manchester City,Draw,4.0,3.94,0.262,0.034,1.0,False,-1.0,96.63,-3.37
+2026-03-01,Brighton vs Nottingham Forest,Home,2.15,2.127,0.527,0.12,1.0,True,1.127,97.76,-2.243
+2026-03-01,Fulham vs Tottenham,Draw,3.75,3.695,0.305,0.126,1.0,False,-1.0,96.76,-3.243
+2026-03-01,Manchester United vs Crystal Palace,Away,6.4,6.292,0.201,0.263,1.0,False,-1.0,95.76,-4.243
+2026-03-03,Wolverhampton Wanderers vs Liverpool,Home,7.5,7.37,0.171,0.258,1.0,True,6.37,102.13,2.127
+2026-03-03,Wolverhampton Wanderers vs Liverpool,Draw,5.0,4.92,0.26,0.281,1.0,False,-1.0,101.13,1.127
+2026-03-03,Leeds vs Sunderland,Home,1.85,1.833,0.572,0.048,1.0,False,-1.0,100.13,0.127
+2026-03-03,Bournemouth vs Brentford,Home,2.55,2.519,0.417,0.051,1.0,False,-1.0,99.13,-0.873
+2026-03-04,Aston Villa vs Chelsea,Away,2.66,2.627,0.405,0.063,1.0,True,1.627,100.75,0.754
+2026-03-04,Fulham vs West Ham,Home,2.28,2.254,0.472,0.065,1.0,False,-1.0,99.75,-0.246
+2026-03-05,Tottenham vs Crystal Palace,Away,2.9,2.862,0.37,0.06,1.0,True,1.862,101.62,1.616
+2026-03-14,Burnley vs Bournemouth,Away,1.94,1.921,0.607,0.166,1.0,False,-1.0,100.62,0.616
+2026-03-14,Sunderland vs Brighton,Home,3.75,3.695,0.289,0.069,1.0,False,-1.0,99.62,-0.384
+2026-03-14,Sunderland vs Brighton,Draw,3.6,3.548,0.313,0.109,1.0,False,-1.0,98.62,-1.384
+2026-03-15,Crystal Palace vs Leeds,Home,2.75,2.715,0.442,0.199,1.0,False,-1.0,97.62,-2.384
+2026-03-15,Liverpool vs Tottenham,Draw,6.25,6.145,0.23,0.415,1.0,True,5.145,102.76,2.761
+2026-03-15,Liverpool vs Tottenham,Away,9.0,8.84,0.143,0.262,1.0,False,-1.0,101.76,1.761
+2026-03-20,Bournemouth vs Manchester United,Home,3.2,3.156,0.352,0.112,1.0,False,-1.0,100.76,0.761
+2026-03-21,Brighton vs Liverpool,Draw,3.75,3.695,0.28,0.036,1.0,False,-1.0,99.76,-0.239
+2026-03-21,Fulham vs Burnley,Draw,4.5,4.43,0.248,0.098,1.0,False,-1.0,98.76,-1.239
+2026-03-21,Everton vs Chelsea,Away,2.28,2.254,0.478,0.078,1.0,False,-1.0,97.76,-2.239
+2026-03-22,Tottenham vs Nottingham Forest,Home,2.45,2.421,0.437,0.059,1.0,False,-1.0,96.76,-3.239
+2026-03-22,Newcastle United vs Sunderland,Draw,4.33,4.263,0.259,0.103,1.0,False,-1.0,95.76,-4.239
+2026-03-22,Aston Villa vs West Ham,Away,4.8,4.724,0.229,0.083,1.0,False,-1.0,94.76,-5.239
+2026-04-10,West Ham vs Wolverhampton Wanderers,Draw,3.9,3.842,0.285,0.095,1.0,False,-1.0,93.76,-6.239
+2026-04-10,West Ham vs Wolverhampton Wanderers,Away,4.75,4.675,0.227,0.059,1.0,False,-1.0,92.76,-7.239
+2026-04-11,Brentford vs Everton,Home,2.2,2.176,0.536,0.167,1.0,False,-1.0,91.76,-8.239
+2026-04-11,Burnley vs Brighton,Home,5.7,5.606,0.185,0.035,1.0,False,-1.0,90.76,-9.239
+2026-04-11,Burnley vs Brighton,Draw,4.25,4.185,0.251,0.049,1.0,False,-1.0,89.76,-10.239
+2026-04-11,Liverpool vs Fulham,Home,1.78,1.764,0.597,0.054,1.0,True,0.764,90.53,-9.475
+2026-04-12,Chelsea vs Manchester City,Home,3.6,3.548,0.392,0.39,1.0,False,-1.0,89.53,-10.475
+2026-04-12,Crystal Palace vs Newcastle United,Home,3.0,2.96,0.414,0.226,1.0,True,1.96,91.49,-8.515
+2026-04-12,Nottingham Forest vs Aston Villa,Away,3.1,3.058,0.37,0.132,1.0,False,-1.0,90.49,-9.515
+2026-04-12,Sunderland vs Tottenham,Home,2.9,2.862,0.371,0.06,1.0,True,1.862,92.35,-7.653
+2026-04-12,Sunderland vs Tottenham,Draw,3.5,3.45,0.321,0.108,1.0,False,-1.0,91.35,-8.653
+2026-04-13,Manchester United vs Leeds,Away,5.25,5.165,0.203,0.046,1.0,True,4.165,95.51,-4.488
+2026-04-18,Brentford vs Fulham,Home,2.05,2.029,0.565,0.146,1.0,False,-1.0,94.51,-5.488
+2026-04-18,Leeds vs Wolverhampton Wanderers,Home,1.67,1.657,0.632,0.047,1.0,True,0.657,95.17,-4.831
+2026-04-18,Newcastle United vs Bournemouth,Away,3.5,3.45,0.334,0.151,1.0,True,2.45,97.62,-2.381
+2026-04-18,Tottenham vs Brighton,Draw,4.0,3.94,0.304,0.199,1.0,True,2.94,100.56,0.559
+2026-04-19,Aston Villa vs Sunderland,Draw,3.9,3.842,0.292,0.121,1.0,False,-1.0,99.56,-0.441
+2026-04-19,Aston Villa vs Sunderland,Away,5.25,5.165,0.219,0.13,1.0,False,-1.0,98.56,-1.441
+2026-04-19,Nottingham Forest vs Burnley,Draw,4.6,4.528,0.255,0.154,1.0,False,-1.0,97.56,-2.441
+2026-04-19,Nottingham Forest vs Burnley,Away,7.5,7.37,0.183,0.348,1.0,False,-1.0,96.56,-3.441
+2026-04-19,Manchester City vs Arsenal,Draw,3.7,3.646,0.297,0.084,1.0,False,-1.0,95.56,-4.441
+2026-04-19,Manchester City vs Arsenal,Away,4.5,4.43,0.391,0.734,1.0,False,-1.0,94.56,-5.441
+2026-04-20,Crystal Palace vs West Ham,Home,2.63,2.597,0.569,0.478,1.0,False,-1.0,93.56,-6.441
+2026-04-21,Brighton vs Chelsea,Away,3.14,3.097,0.384,0.191,1.0,False,-1.0,92.56,-7.441
+2026-04-22,Burnley vs Manchester City,Home,20.0,19.62,0.097,0.913,1.0,False,-1.0,91.56,-8.441
+2026-04-22,Burnley vs Manchester City,Draw,9.5,9.33,0.178,0.663,1.0,False,-1.0,90.56,-9.441
+2026-04-22,Bournemouth vs Leeds,Away,4.33,4.263,0.292,0.244,1.0,False,-1.0,89.56,-10.441
+2026-04-24,Sunderland vs Nottingham Forest,Home,2.75,2.715,0.404,0.098,1.0,False,-1.0,88.56,-11.441
+2026-04-25,Liverpool vs Crystal Palace,Draw,4.5,4.43,0.244,0.08,1.0,False,-1.0,87.56,-12.441
+2026-04-25,Liverpool vs Crystal Palace,Away,5.6,5.508,0.229,0.263,1.0,False,-1.0,86.56,-13.441
+2026-04-25,Wolverhampton Wanderers vs Tottenham,Home,5.0,4.92,0.292,0.439,1.0,False,-1.0,85.56,-14.441
+2026-04-25,Wolverhampton Wanderers vs Tottenham,Draw,4.33,4.263,0.317,0.351,1.0,False,-1.0,84.56,-15.441
+2026-05-02,Wolverhampton Wanderers vs Sunderland,Home,3.82,3.764,0.323,0.216,1.0,False,-1.0,83.56,-16.441
+2026-05-02,Wolverhampton Wanderers vs Sunderland,Draw,3.6,3.548,0.323,0.147,1.0,True,2.548,86.11,-13.893
+2026-05-02,Arsenal vs Fulham,Home,1.5,1.49,0.719,0.071,1.0,True,0.49,86.6,-13.403
+2026-05-02,Brentford vs West Ham,Home,1.9,1.882,0.606,0.141,1.0,True,0.882,87.48,-12.521
+2026-05-02,Newcastle United vs Brighton,Home,2.75,2.715,0.396,0.076,1.0,True,1.715,89.19,-10.806
+2026-05-02,Newcastle United vs Brighton,Draw,3.75,3.695,0.282,0.043,1.0,False,-1.0,88.19,-11.806
+2026-05-03,Bournemouth vs Crystal Palace,Draw,4.33,4.263,0.243,0.036,1.0,False,-1.0,87.19,-12.806
+2026-05-03,Bournemouth vs Crystal Palace,Away,5.66,5.567,0.27,0.504,1.0,False,-1.0,86.19,-13.806
+2026-05-03,Manchester United vs Liverpool,Home,2.4,2.372,0.471,0.117,1.0,True,1.372,87.57,-12.434
+2026-05-03,Aston Villa vs Tottenham,Home,2.28,2.254,0.493,0.111,1.0,False,-1.0,86.57,-13.434
+2026-05-04,Chelsea vs Nottingham Forest,Away,8.2,8.056,0.147,0.185,1.0,True,7.056,93.62,-6.378
+2026-05-04,Everton vs Manchester City,Home,7.0,6.88,0.22,0.516,1.0,False,-1.0,92.62,-7.378
+2026-05-04,Everton vs Manchester City,Draw,5.0,4.92,0.255,0.254,1.0,True,3.92,96.54,-3.458
+2026-05-09,Liverpool vs Chelsea,Away,3.65,3.597,0.328,0.18,1.0,False,-1.0,95.54,-4.458
+2026-05-09,Brighton vs Wolverhampton Wanderers,Draw,6.25,6.145,0.239,0.469,1.0,False,-1.0,94.54,-5.458
+2026-05-09,Brighton vs Wolverhampton Wanderers,Away,11.0,10.8,0.131,0.418,1.0,False,-1.0,93.54,-6.458
+2026-05-09,Fulham vs Bournemouth,Away,2.54,2.509,0.441,0.106,1.0,True,1.509,95.05,-4.949
+2026-05-09,Manchester City vs Brentford,Draw,5.75,5.655,0.224,0.266,1.0,False,-1.0,94.05,-5.949
+2026-05-09,Manchester City vs Brentford,Away,8.5,8.35,0.204,0.701,1.0,False,-1.0,93.05,-6.949
+2026-05-09,Sunderland vs Manchester United,Away,2.2,2.176,0.522,0.136,1.0,False,-1.0,92.05,-7.949
+2026-05-10,Nottingham Forest vs Newcastle United,Home,3.5,3.45,0.335,0.155,1.0,False,-1.0,91.05,-8.949
+2026-05-10,Crystal Palace vs Everton,Home,2.88,2.842,0.482,0.371,1.0,False,-1.0,90.05,-9.949
+2026-05-10,Burnley vs Aston Villa,Home,7.0,6.88,0.207,0.421,1.0,False,-1.0,89.05,-10.949
+2026-05-10,Burnley vs Aston Villa,Draw,4.6,4.528,0.265,0.2,1.0,True,3.528,92.58,-7.421
+2026-05-11,Tottenham vs Leeds,Draw,4.0,3.94,0.298,0.172,1.0,True,2.94,95.52,-4.481
+2026-05-11,Tottenham vs Leeds,Away,4.4,4.332,0.391,0.696,1.0,False,-1.0,94.52,-5.481
+2026-05-13,Manchester City vs Crystal Palace,Draw,6.0,5.9,0.214,0.265,1.0,False,-1.0,93.52,-6.481
+2026-05-13,Manchester City vs Crystal Palace,Away,9.5,9.33,0.166,0.551,1.0,False,-1.0,92.52,-7.481
+2026-05-15,Aston Villa vs Liverpool,Draw,3.84,3.783,0.277,0.05,1.0,False,-1.0,91.52,-8.481
+2026-05-17,Wolverhampton Wanderers vs Fulham,Home,4.2,4.136,0.301,0.245,1.0,False,-1.0,90.52,-9.481
+2026-05-17,Wolverhampton Wanderers vs Fulham,Draw,3.8,3.744,0.305,0.142,1.0,True,2.744,93.26,-6.737
+2026-05-17,Manchester United vs Nottingham Forest,Draw,4.6,4.528,0.229,0.035,1.0,False,-1.0,92.26,-7.737
+2026-05-17,Brentford vs Crystal Palace,Away,4.75,4.675,0.268,0.251,1.0,False,-1.0,91.26,-8.737
+2026-05-17,Everton vs Sunderland,Draw,3.75,3.695,0.284,0.05,1.0,False,-1.0,90.26,-9.737
+2026-05-17,Leeds vs Brighton,Home,3.66,3.607,0.451,0.628,1.0,True,2.607,92.87,-7.13
+2026-05-17,Newcastle United vs West Ham,Home,2.15,2.127,0.56,0.191,1.0,True,1.127,94.0,-6.003
+2026-05-18,Arsenal vs Burnley,Draw,12.0,11.78,0.103,0.216,1.0,False,-1.0,93.0,-7.003
+2026-05-19,Bournemouth vs Manchester City,Home,4.8,4.724,0.316,0.492,1.0,False,-1.0,92.0,-8.003
+2026-05-19,Bournemouth vs Manchester City,Draw,4.5,4.43,0.25,0.108,1.0,True,3.43,95.43,-4.573
+2026-05-19,Chelsea vs Tottenham,Home,2.25,2.225,0.609,0.356,1.0,True,1.225,96.65,-3.348
+2026-05-24,Nottingham Forest vs Bournemouth,Home,3.81,3.754,0.288,0.081,1.0,False,-1.0,95.65,-4.348
+2026-05-24,Manchester City vs Aston Villa,Draw,5.5,5.41,0.208,0.128,1.0,False,-1.0,94.65,-5.348
+2026-05-24,Liverpool vs Brentford,Draw,4.33,4.263,0.246,0.048,1.0,True,3.263,97.92,-2.085
+2026-05-24,Liverpool vs Brentford,Away,4.2,4.136,0.276,0.14,1.0,False,-1.0,96.92,-3.085
+2026-05-24,Tottenham vs Everton,Draw,3.7,3.646,0.299,0.089,1.0,False,-1.0,95.92,-4.085
+2026-05-24,Tottenham vs Everton,Away,4.4,4.332,0.287,0.243,1.0,False,-1.0,94.92,-5.085
+2026-05-24,Crystal Palace vs Arsenal,Draw,3.9,3.842,0.271,0.041,1.0,False,-1.0,93.92,-6.085
+2026-05-24,Burnley vs Wolverhampton Wanderers,Draw,3.6,3.548,0.31,0.099,1.0,True,2.548,96.46,-3.537
+2026-05-24,Brighton vs Manchester United,Draw,4.33,4.263,0.277,0.18,1.0,False,-1.0,95.46,-4.537
+2026-05-24,Brighton vs Manchester United,Away,3.8,3.744,0.346,0.295,1.0,True,2.744,98.21,-1.793
+2026-05-24,West Ham vs Leeds,Draw,4.33,4.263,0.276,0.176,1.0,False,-1.0,97.21,-2.793
+2026-05-24,West Ham vs Leeds,Away,4.5,4.43,0.409,0.813,1.0,False,-1.0,96.21,-3.793
