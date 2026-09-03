@@ -37,7 +37,7 @@ def load_matches(csv_path):
     return df.sort_values("Date").reset_index(drop=True)
 
 
-def filter_sparse_teams(df, min_matches):
+def filter_sparse_teams(df, min_matches, verbose=True):
     """Drop teams with fewer than `min_matches` games, and every match involving
     them, so the fit isn't polluted by near-unidentified ratings (newly promoted
     sides a few games into a season are the usual culprit).
@@ -51,7 +51,8 @@ def filter_sparse_teams(df, min_matches):
         sparse = sorted(counts[counts < min_matches].index)
         if not sparse:
             return df.reset_index(drop=True), counts.to_dict()
-        print(f"Dropping {len(sparse)} team(s) with < {min_matches} matches: {', '.join(sparse)}")
+        if verbose:
+            print(f"Dropping {len(sparse)} team(s) with < {min_matches} matches: {', '.join(sparse)}")
         df = df[~df["Home"].isin(sparse) & ~df["Away"].isin(sparse)]
         if df.empty:
             raise SystemExit(f"No matches left after applying --min-matches {min_matches}.")

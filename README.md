@@ -154,6 +154,37 @@ against bookmaker closing lines before trusting a signal, and note that
 recommended stakes are unconstrained (no bankroll cap across
 simultaneous bets) — apply your own risk limits before betting real money.
 
+## `backtest.py`
+
+Walk-forward calibration check for the model (not part of the pipeline —
+an evaluation tool). Processes matches in date order; for each test match
+it refits the model on only the matches before it, then scores the
+predicted Home/Draw/Away probabilities against the actual result.
+
+```bash
+python backtest.py
+python backtest.py --min-train 200 --refit-every 1 --csv-out bt.csv
+```
+
+Reports, each next to a base-rate baseline (running H/D/A frequency in
+the training set):
+
+- **log-loss**, **RPS** (ranked probability score — the standard football
+  forecasting metric), **multiclass Brier**, **argmax accuracy**
+- a **calibration table**: predicted probabilities pooled across all three
+  outcomes, binned, mean predicted vs observed frequency per bin
+
+Refitting every match is slow, so `--refit-every` (default 10) reuses a
+fit for that many matches; pass `1` for a true match-by-match backtest.
+`--min-matches` is passed through to the sparse-team filter. There is no
+ROI simulation — the odds API's free tier has no historical closing
+lines to bet against.
+
+On the committed data (`--min-train 150 --refit-every 10`) the model beats
+the base rate on every metric (log-loss ≈ 1.04 vs 1.11, accuracy ≈ 48% vs
+39%) but is visibly over-confident in the 0.5–0.7 probability band — the
+same "directional, not sharp" caveat, quantified.
+
 ## Data files
 
 - `fbref_xg.csv` — scraped match data (output of step 1).
