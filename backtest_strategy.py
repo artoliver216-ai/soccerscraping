@@ -28,8 +28,13 @@ matches are training-only. This therefore backtests roughly the back
 Outputs: total ROI %, win rate, profit curve (-> `strategy_curve.csv`
 plus an ASCII sketch), and max drawdown.
 
+`--selection {home,draw,away}` restricts betting to one outcome type.
+`--sweep 0.02,0.04,...` compares several EV thresholds in one pass (the
+rolling refits are shared, so it costs about the same as a single run).
+
     python backtest_strategy.py
     python backtest_strategy.py --min-ev 0.05 --commission 0.02 --stake kelly
+    python backtest_strategy.py --selection draw --sweep 0.02,0.04,0.06,0.08,0.10,0.12,0.14
 """
 
 import argparse
@@ -86,11 +91,14 @@ def kelly_fraction(p, net_odds):
     return max(0.0, (p * b - q) / b) if b > 0 else 0.0
 
 
-def run_strategy(market, train_all, args):
-    bets = []
+def generate_candidates(market, train_all, args):
+    """Walk-forward pass over the season: refit the model on rolling history
+    and record EVERY H/D/A outcome with its model probability, net odds and
+    EV. Threshold / selection filtering and staking happen later in
+    simulate(), so a threshold sweep only pays for the refits once."""
+    rows = []
     params = None
     matches_since_fit = 0
-    bankroll = args.bankroll
 
     for _, row in market.iterrows():
         train = train_all[train_all["Date"] < row["Date"]]
@@ -109,41 +117,55 @@ def run_strategy(market, train_all, args):
             continue
 
         pred = pm.predict(home, away, params)
-
         for code, odds_col in (("H", "odds_H"), ("D", "odds_D"), ("A", "odds_A")):
             p = pred[RESULT_TO_OUTCOME[code]]
             net = adjust_exchange_odds(row[odds_col], args.commission)
-            ev = p * net - 1.0
-            if ev < args.min_ev:
-                continue
-
-            if args.stake == "kelly":
-                stake = args.kelly_fraction * kelly_fraction(p, net) * bankroll
-            else:
-                stake = 1.0
-            if stake <= 0:
-                continue
-
-            won = row["FTR"] == code
-            profit = stake * (net - 1.0) if won else -stake
-            bankroll += profit
-
-            bets.append(
+            rows.append(
                 {
                     "Date": row["Date"].date(),
                     "Match": f"{home} vs {away}",
                     "Selection": OUTCOME_LABEL[code],
                     "Odds": round(row[odds_col], 2),
-                    "NetOdds": round(net, 3),
-                    "ModelProb": round(p, 3),
-                    "EV": round(ev, 3),
-                    "Stake": round(stake, 3),
-                    "Won": won,
-                    "Profit": round(profit, 3),
-                    "Bankroll": round(bankroll, 2),
+                    "NetOdds": round(net, 4),
+                    "ModelProb": round(p, 4),
+                    "EV": round(p * net - 1.0, 4),
+                    "Won": row["FTR"] == code,
                 }
             )
 
+    return pd.DataFrame(rows)
+
+
+def simulate(candidates, min_ev, selection, stake_mode, kelly_frac, bankroll0):
+    """Filter candidates to a bettable slate and settle it in date order."""
+    slate = candidates[candidates["EV"] >= min_ev]
+    if selection != "all":
+        slate = slate[slate["Selection"] == selection.capitalize()]
+
+    bets = []
+    bankroll = bankroll0
+    for _, c in slate.iterrows():
+        net = c["NetOdds"]
+        if stake_mode == "kelly":
+            stake = kelly_frac * kelly_fraction(c["ModelProb"], net) * bankroll
+        else:
+            stake = 1.0
+        if stake <= 0:
+            continue
+        profit = stake * (net - 1.0) if c["Won"] else -stake
+        bankroll += profit
+        bets.append(
+            {
+                **c,
+                "Odds": round(c["Odds"], 2),
+                "NetOdds": round(net, 3),
+                "ModelProb": round(c["ModelProb"], 3),
+                "EV": round(c["EV"], 3),
+                "Stake": round(stake, 3),
+                "Profit": round(profit, 3),
+                "Bankroll": round(bankroll, 2),
+            }
+        )
     return pd.DataFrame(bets)
 
 
@@ -171,44 +193,73 @@ def ascii_curve(cum, width=64, height=14):
     return "\n".join(rows)
 
 
-def summarize(bets, args):
+def metrics(bets, bankroll0):
+    """Headline numbers for one settled slate."""
     n = len(bets)
     staked = bets["Stake"].sum()
     profit = bets["Profit"].sum()
-    wins = int(bets["Won"].sum())
-
-    cum = bets["Profit"].cumsum()
-    equity = args.bankroll + cum
+    equity = bankroll0 + bets["Profit"].cumsum()
     peak = equity.cummax()
     drawdown = peak - equity
-    max_dd = drawdown.max()
-    max_dd_pct = (drawdown / peak).max() * 100
+    return {
+        "bets": n,
+        "staked": staked,
+        "profit": profit,
+        "roi": profit / staked * 100 if staked else 0.0,
+        "win_rate": bets["Won"].mean() * 100 if n else 0.0,
+        "avg_odds": bets["NetOdds"].mean() if n else 0.0,
+        "avg_edge": bets["EV"].mean() * 100 if n else 0.0,
+        "final": equity.iloc[-1] if n else bankroll0,
+        "max_dd": drawdown.max() if n else 0.0,
+        "max_dd_pct": (drawdown / peak).max() * 100 if n else 0.0,
+    }
 
-    print(f"\n{'='*58}")
-    print(f"  STRATEGY BACKTEST — 2025/26  ({args.stake} staking)")
-    print(f"{'='*58}")
+
+def summarize(bets, args):
+    m = metrics(bets, args.bankroll)
+
+    print(f"\n{'='*60}")
+    print(f"  STRATEGY BACKTEST — 2025/26  ({args.stake} staking, {args.selection})")
+    print(f"{'='*60}")
     print(f"  Betting window     {bets['Date'].iloc[0]}  ->  {bets['Date'].iloc[-1]}")
-    print(f"  Bets placed        {n}")
-    print(f"  Total staked       {staked:.2f} u")
-    print(f"  Total profit       {profit:+.2f} u")
-    print(f"  ROI                {profit / staked * 100:+.2f} %")
-    print(f"  Win rate           {wins}/{n}  ({wins / n * 100:.1f} %)")
-    print(f"  Avg net odds       {bets['NetOdds'].mean():.2f}")
-    print(f"  Avg model edge     {bets['EV'].mean() * 100:+.1f} %")
-    print(f"  Final bankroll     {equity.iloc[-1]:.2f} u  (start {args.bankroll:.0f})")
-    print(f"  Max drawdown       {max_dd:.2f} u  ({max_dd_pct:.1f} % of peak)")
-    print(f"{'='*58}")
+    print(f"  Bets placed        {m['bets']}")
+    print(f"  Total staked       {m['staked']:.2f} u")
+    print(f"  Total profit       {m['profit']:+.2f} u")
+    print(f"  ROI                {m['roi']:+.2f} %")
+    print(f"  Win rate           {int(bets['Won'].sum())}/{m['bets']}  ({m['win_rate']:.1f} %)")
+    print(f"  Avg net odds       {m['avg_odds']:.2f}")
+    print(f"  Avg model edge     {m['avg_edge']:+.1f} %")
+    print(f"  Final bankroll     {m['final']:.2f} u  (start {args.bankroll:.0f})")
+    print(f"  Max drawdown       {m['max_dd']:.2f} u  ({m['max_dd_pct']:.1f} % of peak)")
+    print(f"{'='*60}")
 
-    by_sel = bets.groupby("Selection").agg(
-        bets=("Profit", "size"), profit=("Profit", "sum"), win_rate=("Won", "mean")
-    )
-    by_sel["win_rate"] = (by_sel["win_rate"] * 100).round(1)
-    by_sel["profit"] = by_sel["profit"].round(2)
-    print("\nBy selection:")
-    print(by_sel.to_string())
+    if args.selection == "all":
+        by_sel = bets.groupby("Selection").agg(
+            bets=("Profit", "size"), profit=("Profit", "sum"), win_rate=("Won", "mean")
+        )
+        by_sel["win_rate"] = (by_sel["win_rate"] * 100).round(1)
+        by_sel["profit"] = by_sel["profit"].round(2)
+        print("\nBy selection:")
+        print(by_sel.to_string())
 
     print("\nProfit curve (cumulative units, chronological):")
-    print(ascii_curve(cum))
+    print(ascii_curve(bets["Profit"].cumsum()))
+
+
+def run_sweep(candidates, thresholds, args):
+    print(f"\nThreshold sweep — {args.stake} staking, selection={args.selection}, "
+          f"commission={args.commission:.0%}\n")
+    header = f"{'min_ev':>7}  {'bets':>5}  {'ROI %':>8}  {'win %':>7}  {'avg_odds':>8}  {'profit u':>9}  {'max_dd %':>8}"
+    print(header)
+    print("-" * len(header))
+    for t in thresholds:
+        bets = simulate(candidates, t, args.selection, args.stake, args.kelly_fraction, args.bankroll)
+        if bets.empty:
+            print(f"{t:>7.1%}  {'0':>5}  {'—':>8}  {'—':>7}  {'—':>8}  {'—':>9}  {'—':>8}")
+            continue
+        m = metrics(bets, args.bankroll)
+        print(f"{t:>7.1%}  {m['bets']:>5}  {m['roi']:>+8.2f}  {m['win_rate']:>7.1f}  "
+              f"{m['avg_odds']:>8.2f}  {m['profit']:>+9.2f}  {m['max_dd_pct']:>8.1f}")
 
 
 def main():
@@ -219,6 +270,17 @@ def main():
     parser.add_argument("--refit-every", type=int, default=10, help="Rolling refit cadence, in matches")
     parser.add_argument("--min-matches", type=int, default=fdc.MIN_MATCHES)
     parser.add_argument("--min-ev", type=float, default=0.03, help="EV threshold to place a bet (0.03 = +3%%)")
+    parser.add_argument(
+        "--selection",
+        choices=["all", "home", "draw", "away"],
+        default="all",
+        help="Restrict bets to one outcome type (default: all)",
+    )
+    parser.add_argument(
+        "--sweep",
+        help="Comma-separated EV thresholds to compare, e.g. 0.02,0.04,0.06,0.08,0.10,0.12 "
+        "(overrides --min-ev; prints a table instead of a full report)",
+    )
     parser.add_argument("--commission", type=float, default=0.02, help="Exchange commission on winnings")
     parser.add_argument("--stake", choices=["flat", "kelly"], default="flat")
     parser.add_argument("--kelly-fraction", type=float, default=0.25)
@@ -230,9 +292,20 @@ def main():
     train_all = fdc.load_matches(args.xg_csv)
     train_all = train_all[train_all["Date"] <= market["Date"].max()]  # 2025/26 only
 
-    bets = run_strategy(market, train_all, args)
+    candidates = generate_candidates(market, train_all, args)
+    if candidates.empty:
+        raise SystemExit("No candidate outcomes — check --min-train / data.")
+
+    if args.sweep:
+        thresholds = sorted(float(x) for x in args.sweep.split(","))
+        run_sweep(candidates, thresholds, args)
+        return
+
+    bets = simulate(
+        candidates, args.min_ev, args.selection, args.stake, args.kelly_fraction, args.bankroll
+    )
     if bets.empty:
-        raise SystemExit("No qualifying bets — try a lower --min-ev or --min-train.")
+        raise SystemExit("No qualifying bets — try a lower --min-ev or different --selection.")
 
     bets["CumProfit"] = bets["Profit"].cumsum().round(3)
     bets.to_csv(args.curve_out, index=False)
