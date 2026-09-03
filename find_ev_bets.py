@@ -7,9 +7,14 @@ Setup:
         export ODDS_API_KEY=your_key_here
     or pass it with --api-key.
 
+Exchange back prices (Betfair Exchange, Smarkets, Matchbook) are discounted
+for commission on winnings (--commission, default 2%) before their EV is
+computed, and show up as "<name> (net)".
+
 Usage:
     python find_ev_bets.py                       # live odds, default thresholds
     python find_ev_bets.py --min-ev 0.05 --bankroll 500
+    python find_ev_bets.py --commission 0.05      # 5% exchange commission
     python find_ev_bets.py --dry-run              # sample data, no API call/key needed
 """
 
@@ -34,6 +39,22 @@ TEAM_NAME_ALIASES = {
     "Tottenham Hotspur": "Tottenham",
     "West Ham United": "West Ham",
 }
+
+# Betting exchanges quote the raw back price but take commission on net
+# winnings, so their listed odds overstate the real return. Matched by the
+# odds API's bookmaker `key` (not `title` — "Betfair" the exchange is
+# `betfair_ex_*`, while "Betfair Sportsbook" is `betfair` and is not an
+# exchange).
+EXCHANGE_KEYS = {"smarkets", "matchbook"}  # plus anything starting "betfair_ex"
+
+
+def is_exchange(bookmaker_key):
+    return bookmaker_key in EXCHANGE_KEYS or bookmaker_key.startswith("betfair_ex")
+
+
+def adjust_exchange_odds(decimal_odds, commission=0.02):
+    """Adjusts raw exchange back odds to reflect net return after commission."""
+    return 1.0 + (decimal_odds - 1.0) * (1.0 - commission)
 
 
 def fetch_live_odds(api_key, sport=SPORT, region="uk"):
@@ -96,8 +117,14 @@ def calculate_ev_and_kelly(prob, decimal_odds, bankroll, kelly_frac):
     return round(ev, 4), round(stake, 2)
 
 
-def evaluate_market_opportunities(live_fixtures, model_predictions, bankroll, min_ev, kelly_frac):
-    """Compares live odds against model probabilities to extract +EV bets."""
+def evaluate_market_opportunities(
+    live_fixtures, model_predictions, bankroll, min_ev, kelly_frac, commission=0.02
+):
+    """Compares live odds against model probabilities to extract +EV bets.
+
+    Exchange back prices (Betfair Exchange, Smarkets, Matchbook) are first
+    discounted to their net return after `commission`, so their EV is
+    comparable to a fixed-odds bookmaker's."""
     opportunities = []
 
     for game in live_fixtures:
@@ -111,7 +138,8 @@ def evaluate_market_opportunities(live_fixtures, model_predictions, bankroll, mi
         probs = model_predictions[match_key]
 
         for bookmaker in game.get("bookmakers", []):
-            bookie_name = bookmaker["title"]
+            exchange = is_exchange(bookmaker.get("key", ""))
+            bookie_name = f"{bookmaker['title']} (net)" if exchange else bookmaker["title"]
 
             for market in bookmaker.get("markets", []):
                 if market["key"] != "h2h":
@@ -120,6 +148,8 @@ def evaluate_market_opportunities(live_fixtures, model_predictions, bankroll, mi
                 for outcome in market["outcomes"]:
                     selection = outcome["name"]
                     odds = outcome["price"]
+                    if exchange:
+                        odds = adjust_exchange_odds(odds, commission)
 
                     if selection == home_team:
                         model_p = probs.get("Home Win")
@@ -138,7 +168,7 @@ def evaluate_market_opportunities(live_fixtures, model_predictions, bankroll, mi
                                 "Match": match_key,
                                 "Bookmaker": bookie_name,
                                 "Selection": selection,
-                                "Odds": odds,
+                                "Odds": round(odds, 2),
                                 "Model_Prob": f"{model_p:.1%}",
                                 "Implied_Prob": f"{(1 / odds):.1%}",
                                 "EV_%": f"{ev * 100:+.2f}%",
@@ -161,6 +191,7 @@ def sample_fixtures():
             "away_team": "Chelsea",
             "bookmakers": [
                 {
+                    "key": "unibet",
                     "title": "Unibet",
                     "markets": [
                         {
@@ -172,7 +203,21 @@ def sample_fixtures():
                             ],
                         }
                     ],
-                }
+                },
+                {
+                    "key": "smarkets",
+                    "title": "Smarkets",
+                    "markets": [
+                        {
+                            "key": "h2h",
+                            "outcomes": [
+                                {"name": "Arsenal", "price": 2.02},
+                                {"name": "Chelsea", "price": 4.30},
+                                {"name": "Draw", "price": 3.75},
+                            ],
+                        }
+                    ],
+                },
             ],
         }
     ]
@@ -185,6 +230,13 @@ def main():
     parser.add_argument("--bankroll", type=float, default=1000.00)
     parser.add_argument("--min-ev", type=float, default=0.03, help="Minimum EV threshold, e.g. 0.03 = 3%%")
     parser.add_argument("--kelly-fraction", type=float, default=0.25)
+    parser.add_argument(
+        "--commission",
+        type=float,
+        default=0.02,
+        help="Exchange commission on net winnings, applied to Betfair Exchange / Smarkets / "
+        "Matchbook prices (default 0.02 = 2%%)",
+    )
     parser.add_argument("--params", default=predict_match.PARAMS_PATH)
     parser.add_argument("--dry-run", action="store_true", help="Use sample odds instead of calling the live API")
     args = parser.parse_args()
@@ -203,13 +255,18 @@ def main():
     model_predictions = build_model_predictions(live_fixtures, params)
 
     results = evaluate_market_opportunities(
-        live_fixtures, model_predictions, args.bankroll, args.min_ev, args.kelly_fraction
+        live_fixtures, model_predictions, args.bankroll, args.min_ev, args.kelly_fraction,
+        args.commission,
     )
 
     if results.empty:
         print(f"No +EV opportunities found (threshold {args.min_ev:.1%}).")
     else:
         print(results.to_string(index=False))
+        print(
+            f"\n'(net)' rows are exchange back prices discounted for {args.commission:.0%} "
+            "commission on winnings."
+        )
 
 
 if __name__ == "__main__":

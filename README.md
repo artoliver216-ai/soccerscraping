@@ -124,6 +124,7 @@ the Dixon-Coles model.
 ```bash
 python find_ev_bets.py                          # live odds, default thresholds
 python find_ev_bets.py --min-ev 0.05 --bankroll 500
+python find_ev_bets.py --commission 0.05         # 5% exchange commission
 python find_ev_bets.py --dry-run                 # sample odds, no API key needed
 ```
 
@@ -136,12 +137,19 @@ Steps:
    Understat-derived names (e.g. "Tottenham") — a `TEAM_NAME_ALIASES` map
    handles the known cases; unmatched fixtures are skipped with a warning
    rather than silently mispriced.
-3. For each bookmaker outcome, computes:
+3. **Exchange back prices are discounted for commission.** Betfair
+   Exchange / Smarkets / Matchbook quote the raw back price but take
+   `--commission` (default 2%) on net winnings, so their listed odds
+   overstate the real return; each is replaced by
+   `1 + (odds − 1)·(1 − commission)` and shown as `<name> (net)`.
+   Exchanges are matched on the odds API's bookmaker `key`, so "Betfair
+   Sportsbook" (fixed-odds) is left alone.
+4. For each bookmaker outcome, computes:
    - **EV** = `(model probability × decimal odds) - 1`
    - **Stake** via fractional Kelly (`f* = (p·b - q) / b`, scaled by
      `--kelly-fraction`, default 0.25 = quarter-Kelly, a common way to
      reduce variance versus full Kelly)
-4. Prints every outcome with `EV ≥ --min-ev` (default `0.03` = +3%),
+5. Prints every outcome with `EV ≥ --min-ev` (default `0.03` = +3%),
    sorted by EV descending.
 
 Only 1X2 is scanned. An Over/Under 2.5 scanner was tried and removed: the
@@ -151,7 +159,7 @@ calibration check stays in `backtest.py` as the evidence for that call.
 
 Key flags: `--api-key` (or set `ODDS_API_KEY`), `--region`
 (`uk`/`eu`/`us`/`au`), `--bankroll`, `--min-ev`, `--kelly-fraction`,
-`--dry-run`.
+`--commission`, `--dry-run`.
 
 **Caveat**: EV here is only as good as the underlying model — and since
 the Dixon-Coles fit here is on xG rather than actual goals with a
