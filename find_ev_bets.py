@@ -143,11 +143,14 @@ def evaluate_market_opportunities(live_fixtures, model_predictions, bankroll, mi
                                 "Implied_Prob": f"{(1 / odds):.1%}",
                                 "EV_%": f"{ev * 100:+.2f}%",
                                 "Rec_Stake": f"${stake}",
+                                "_ev": ev,  # numeric key for sorting; dropped before display
                             }
                         )
 
     df_ev = pd.DataFrame(opportunities)
-    return df_ev.sort_values(by="EV_%", ascending=False) if not df_ev.empty else df_ev
+    if df_ev.empty:
+        return df_ev
+    return df_ev.sort_values(by="_ev", ascending=False).drop(columns="_ev")
 
 
 def sample_fixtures():
