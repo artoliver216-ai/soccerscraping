@@ -1,12 +1,16 @@
-"""Walk-forward backtest of the Dixon-Coles model's 1X2 calibration.
+"""Walk-forward backtest of the Dixon-Coles model's calibration.
 
 Matches are processed in date order. For each test match, the model is
-refit on *only* the matches that kicked off before it, then its predicted
-Home / Draw / Away probabilities are scored against the actual result.
-Reports log-loss, ranked probability score (RPS), multiclass Brier,
-argmax accuracy, and a calibration table — each alongside a base-rate
-baseline (the running Home/Draw/Away frequency in the training set), so a
-number has something to be "good" or "bad" relative to.
+refit on *only* the matches that kicked off before it, then its
+predictions are scored against the actual result, in two markets:
+
+  - 1X2: Home / Draw / Away  (log-loss, ranked probability score, Brier,
+    argmax accuracy)
+  - Over/Under 2.5 total goals  (binary log-loss, Brier, accuracy)
+
+Each metric is shown next to a base-rate baseline (the running frequency
+of that outcome in the training set), so a number has something to be
+"good" or "bad" relative to. Both markets also get a calibration table.
 
 Refitting for every single match is slow, so by default the model is
 refit every `--refit-every` matches and reused in between; pass
@@ -32,9 +36,16 @@ import predict_match as pm
 OUTCOMES = ["home_win", "draw", "away_win"]
 _OUTCOME_IDX = {o: i for i, o in enumerate(OUTCOMES)}
 
+TOTALS_LINE = 2.5  # the Over/Under line predict_match prices by default
+
+
+def parse_score(score):
+    home_goals, away_goals = (int(x) for x in str(score).split("-"))
+    return home_goals, away_goals
+
 
 def actual_outcome(score):
-    home_goals, away_goals = (int(x) for x in str(score).split("-"))
+    home_goals, away_goals = parse_score(score)
     if home_goals > away_goals:
         return "home_win"
     if home_goals < away_goals:
@@ -57,11 +68,13 @@ def params_from_fit(teams, attack, defense, gamma, rho):
 def walk_forward(df, min_train, refit_every, min_matches):
     df = df.sort_values("Date").reset_index(drop=True)
     df["_outcome"] = df["Score"].map(actual_outcome)
+    df["_over25"] = df["Score"].map(lambda s: int(sum(parse_score(s)) > TOTALS_LINE))
 
     records = []
     skipped = 0
     params = None
     base_rates = None
+    base_over = None
     last_fit_idx = None
 
     for i in range(min_train, len(df)):
@@ -73,6 +86,7 @@ def walk_forward(df, min_train, refit_every, min_matches):
             base_rates = (
                 train["_outcome"].value_counts(normalize=True).reindex(OUTCOMES).fillna(0.0)
             )
+            base_over = train["_over25"].mean()
             last_fit_idx = i
 
         row = df.iloc[i]
@@ -87,17 +101,22 @@ def walk_forward(df, min_train, refit_every, min_matches):
                 "Home": row["Home"],
                 "Away": row["Away"],
                 "actual": row["_outcome"],
+                "over25": row["_over25"],
                 "p_home": pred["home_win"],
                 "p_draw": pred["draw"],
                 "p_away": pred["away_win"],
+                "p_over": pred["goals_over"],
                 "b_home": base_rates["home_win"],
                 "b_draw": base_rates["draw"],
                 "b_away": base_rates["away_win"],
+                "b_over": base_over,
             }
         )
 
     return pd.DataFrame(records), skipped
 
+
+# --- 1X2 (multiclass) scoring -------------------------------------------------
 
 def _probs_and_onehot(results, cols):
     probs = results[cols].to_numpy(dtype=float)
@@ -106,7 +125,7 @@ def _probs_and_onehot(results, cols):
     return probs, onehot, y
 
 
-def score(results, cols):
+def score_1x2(results, cols):
     """log-loss, RPS, Brier and accuracy for the probability columns `cols`
     (given in OUTCOMES order)."""
     probs, onehot, y = _probs_and_onehot(results, cols)
@@ -126,16 +145,32 @@ def score(results, cols):
     return {"log_loss": log_loss, "rps": rps, "brier": brier, "accuracy": accuracy}
 
 
-def calibration_table(results, cols, bins=10):
+def calibration_1x2(results, cols, bins=10):
     """Pool all predicted probabilities (across the 3 outcomes), bin them, and
     compare mean predicted probability to observed frequency in each bin."""
     probs, onehot, _ = _probs_and_onehot(results, cols)
-    p_flat = probs.reshape(-1)
-    e_flat = onehot.reshape(-1)
+    return _calibration(probs.reshape(-1), onehot.reshape(-1), bins)
 
+
+# --- Over/Under (binary) scoring ---------------------------------------------
+
+def score_binary(p, y):
+    """Binary log-loss, Brier and accuracy for P(event) `p` vs indicator `y`."""
+    p = np.clip(np.asarray(p, dtype=float), 1e-15, 1 - 1e-15)
+    y = np.asarray(y, dtype=float)
+    log_loss = -np.mean(y * np.log(p) + (1 - y) * np.log(1 - p))
+    brier = np.mean((p - y) ** 2)
+    accuracy = np.mean((p > 0.5) == (y > 0.5))
+    return {"log_loss": log_loss, "brier": brier, "accuracy": accuracy}
+
+
+def calibration_binary(p, y, bins=10):
+    return _calibration(np.asarray(p, dtype=float), np.asarray(y, dtype=float), bins)
+
+
+def _calibration(p_flat, e_flat, bins):
     edges = np.linspace(0.0, 1.0, bins + 1)
     idx = np.clip(np.digitize(p_flat, edges) - 1, 0, bins - 1)
-
     rows = []
     for k in range(bins):
         mask = idx == k
@@ -150,6 +185,20 @@ def calibration_table(results, cols, bins=10):
             }
         )
     return pd.DataFrame(rows)
+
+
+# --- reporting --------------------------------------------------------------
+
+def _metric_table(metric_names, model, baseline):
+    tbl = pd.DataFrame(
+        {
+            "metric": metric_names,
+            "model": [model[m] for m in metric_names],
+            "base_rate": [baseline[m] for m in metric_names],
+        }
+    )
+    tbl["delta"] = tbl["model"] - tbl["base_rate"]
+    return tbl
 
 
 def main():
@@ -170,25 +219,41 @@ def main():
     if results.empty:
         raise SystemExit("No matches could be scored (every test fixture involved a filtered-out team).")
 
-    model = score(results, ["p_home", "p_draw", "p_away"])
-    baseline = score(results, ["b_home", "b_draw", "b_away"])
+    print(f"Tested {len(results)} matches ({skipped} skipped: team not in the fit at prediction time)")
 
-    print(f"Tested {len(results)} matches ({skipped} skipped: team not in the fit at prediction time)\n")
-
-    metrics = pd.DataFrame(
-        {
-            "metric": ["log_loss", "rps", "brier", "accuracy"],
-            "model": [model["log_loss"], model["rps"], model["brier"], model["accuracy"]],
-            "base_rate": [baseline["log_loss"], baseline["rps"], baseline["brier"], baseline["accuracy"]],
-        }
+    # 1X2
+    model = score_1x2(results, ["p_home", "p_draw", "p_away"])
+    baseline = score_1x2(results, ["b_home", "b_draw", "b_away"])
+    print("\n1X2 (Home / Draw / Away):")
+    print(
+        _metric_table(["log_loss", "rps", "brier", "accuracy"], model, baseline).to_string(
+            index=False, float_format=lambda v: f"{v:.4f}"
+        )
     )
-    metrics["delta"] = metrics["model"] - metrics["base_rate"]
-    print(metrics.to_string(index=False, float_format=lambda v: f"{v:.4f}"))
-    print("  (lower is better for log_loss / rps / brier; higher for accuracy)\n")
+    print(f"\nCalibration ({args.bins} bins, all outcomes pooled):")
+    print(
+        calibration_1x2(results, ["p_home", "p_draw", "p_away"], bins=args.bins).to_string(
+            index=False, float_format=lambda v: f"{v:.3f}"
+        )
+    )
 
-    print(f"Calibration ({args.bins} bins, all outcomes pooled):")
-    cal = calibration_table(results, ["p_home", "p_draw", "p_away"], bins=args.bins)
-    print(cal.to_string(index=False, float_format=lambda v: f"{v:.3f}"))
+    # Over/Under 2.5
+    ou_model = score_binary(results["p_over"], results["over25"])
+    ou_base = score_binary(results["b_over"], results["over25"])
+    print(f"\nOver/Under {TOTALS_LINE} goals (scoring P(Over)):")
+    print(
+        _metric_table(["log_loss", "brier", "accuracy"], ou_model, ou_base).to_string(
+            index=False, float_format=lambda v: f"{v:.4f}"
+        )
+    )
+    print(f"\nCalibration of P(Over {TOTALS_LINE}) ({args.bins} bins):")
+    print(
+        calibration_binary(results["p_over"], results["over25"], bins=args.bins).to_string(
+            index=False, float_format=lambda v: f"{v:.3f}"
+        )
+    )
+
+    print("\n  (lower is better for log_loss / rps / brier; higher for accuracy)")
 
     if args.csv_out:
         results.to_csv(args.csv_out, index=False)

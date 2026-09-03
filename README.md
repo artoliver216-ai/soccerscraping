@@ -167,21 +167,23 @@ simultaneous bets) — apply your own risk limits before betting real money.
 
 Walk-forward calibration check for the model (not part of the pipeline —
 an evaluation tool). Processes matches in date order; for each test match
-it refits the model on only the matches before it, then scores the
-predicted Home/Draw/Away probabilities against the actual result.
+it refits the model on only the matches before it, then scores its
+predictions against the actual result, in two markets:
+
+- **1X2** — log-loss, **RPS** (ranked probability score, the standard
+  football forecasting metric), multiclass Brier, argmax accuracy
+- **Over/Under 2.5 goals** — binary log-loss, Brier, accuracy on
+  `P(Over)`
 
 ```bash
 python backtest.py
 python backtest.py --min-train 200 --refit-every 1 --csv-out bt.csv
 ```
 
-Reports, each next to a base-rate baseline (running H/D/A frequency in
-the training set):
-
-- **log-loss**, **RPS** (ranked probability score — the standard football
-  forecasting metric), **multiclass Brier**, **argmax accuracy**
-- a **calibration table**: predicted probabilities pooled across all three
-  outcomes, binned, mean predicted vs observed frequency per bin
+Each metric is shown next to a base-rate baseline (the running frequency
+of that outcome in the training set), and each market gets a
+**calibration table** (predicted probability binned, mean predicted vs
+observed frequency per bin — 1X2 pools all three outcomes).
 
 Refitting every match is slow, so `--refit-every` (default 10) reuses a
 fit for that many matches; pass `1` for a true match-by-match backtest.
