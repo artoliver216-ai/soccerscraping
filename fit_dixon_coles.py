@@ -11,7 +11,7 @@ made to the standard Dixon-Coles formulation:
   - The low-score correction (tau) is evaluated on the *rounded* xG values,
     since it is defined only for the scorelines 0-0, 1-0, 0-1, 1-1.
 
-Teams with fewer than --min-matches games (default 6) are dropped before fitting
+Teams with fewer than --min-matches games (default 10) are dropped before fitting
 (see filter_sparse_teams) and won't appear in model_params.json.
 """
 
@@ -26,9 +26,11 @@ from scipy.special import gammaln
 CSV_PATH = "fbref_xg.csv"
 PARAMS_PATH = "model_params.json"
 XI = 0.00231  # time-decay rate (Dixon & Coles 1997)
-MIN_MATCHES = 6  # teams with fewer matches than this are dropped before fitting
+MIN_MATCHES = 10  # teams with fewer matches than this are dropped before fitting
 # (see filter_sparse_teams) — too little data to estimate attack/defense without
 # the optimizer fitting noise, which also distorts gamma/rho and opponents' ratings.
+# ~10 is roughly a quarter-season: enough current-form signal for a side whose
+# only relevant data is the season in progress (e.g. a newly-promoted team).
 
 
 def load_matches(csv_path):
