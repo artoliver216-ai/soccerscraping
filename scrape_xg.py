@@ -1,6 +1,6 @@
-"""Scrape completed-match xG data for the last two full Premier League seasons
-(2024/25 and 2025/26) from Understat, using a headless browser since Understat
-renders its match calendar via JavaScript.
+"""Scrape completed-match xG data for the current and previous Premier League
+seasons (2025/26 and 2026/27) from Understat, using a headless browser since
+Understat renders its match calendar via JavaScript.
 
 Understat's calendar only shows one week at a time, so for each season we start
 at the most recent week and click "prev week" repeatedly, collecting matches,
@@ -15,8 +15,8 @@ import pandas as pd
 from bs4 import BeautifulSoup
 from playwright.sync_api import sync_playwright
 
-SEASONS = ["2024", "2025"]  # understat labels seasons by their starting year:
-# "2024" -> 2024/25 season, "2025" -> 2025/26 season
+SEASONS = ["2025", "2026"]  # understat labels seasons by their starting year:
+# "2025" -> 2025/26 season, "2026" -> 2026/27 season
 BASE_URL = "https://understat.com/league/EPL/{season}"
 USER_AGENT = (
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "

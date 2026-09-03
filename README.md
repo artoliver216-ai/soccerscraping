@@ -25,7 +25,7 @@ export ODDS_API_KEY=your_key_here
 
 ## 1. `scrape_xg.py`
 
-Scrapes completed Premier League matches (2024/25 and 2025/26 seasons) from
+Scrapes completed Premier League matches (2025/26 and 2026/27 seasons) from
 [Understat](https://understat.com), including each team's expected goals
 (xG) per match.
 
