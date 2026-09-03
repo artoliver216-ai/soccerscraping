@@ -70,13 +70,25 @@ of actual goals**.
   actual goal counts, so the fit tends to push ρ toward whatever bound is
   set rather than settling on it naturally. Treat ρ as a soft regularizer,
   not a strongly-identified parameter.
+- **Min-matches guard**: teams with fewer than `--min-matches` games
+  (default 6) are dropped before fitting, along with every match involving
+  them. A few games is too little to separate a team's attack from its
+  defense, and the optimizer will fit that noise — distorting γ, ρ, and the
+  ratings of everyone they played. The filter is applied iteratively
+  (dropping a sparse team's matches can pull a borderline opponent under
+  the threshold too). Dropped teams are simply absent from
+  `model_params.json`, so `predict_match.py` / `find_ev_bets.py` skip any
+  fixture involving them rather than pricing it off a bad rating. This
+  mostly bites newly-promoted sides early in a season.
 
 ```bash
 python fit_dixon_coles.py
+python fit_dixon_coles.py --min-matches 10   # stricter
 ```
 
-Prints a summary table of fitted α/β per team plus γ and ρ, and saves all
-parameters to `model_params.json`.
+Prints a summary table of fitted α/β and match count per team plus γ and
+ρ, and saves all parameters to `model_params.json` (per-team `attack`,
+`defense`, `matches`, plus `home_advantage`, `rho`, `xi`, `min_matches`).
 
 ## 3. `predict_match.py`
 
@@ -146,8 +158,8 @@ simultaneous bets) — apply your own risk limits before betting real money.
 
 - `fbref_xg.csv` — scraped match data (output of step 1).
 - `model_params.json` — fitted model parameters (output of step 2, input
-  to step 3): per-team `attack`/`defense`, plus `home_advantage`, `rho`,
-  and `xi`.
+  to step 3): per-team `attack`/`defense`/`matches`, plus `home_advantage`,
+  `rho`, `xi`, and `min_matches`.
 
 Both are committed so `predict_match.py` can be run without re-scraping or
 re-fitting.

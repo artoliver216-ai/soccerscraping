@@ -10,8 +10,12 @@ made to the standard Dixon-Coles formulation:
     log-gamma function (k! -> Gamma(k+1)).
   - The low-score correction (tau) is evaluated on the *rounded* xG values,
     since it is defined only for the scorelines 0-0, 1-0, 0-1, 1-1.
+
+Teams with fewer than --min-matches games (default 6) are dropped before fitting
+(see filter_sparse_teams) and won't appear in model_params.json.
 """
 
+import argparse
 import json
 
 import numpy as np
@@ -22,12 +26,35 @@ from scipy.special import gammaln
 CSV_PATH = "fbref_xg.csv"
 PARAMS_PATH = "model_params.json"
 XI = 0.00231  # time-decay rate (Dixon & Coles 1997)
+MIN_MATCHES = 6  # teams with fewer matches than this are dropped before fitting
+# (see filter_sparse_teams) — too little data to estimate attack/defense without
+# the optimizer fitting noise, which also distorts gamma/rho and opponents' ratings.
 
 
 def load_matches(csv_path):
     df = pd.read_csv(csv_path)
     df["Date"] = pd.to_datetime(df["Date"], format="%A, %B %d, %Y")
     return df.sort_values("Date").reset_index(drop=True)
+
+
+def filter_sparse_teams(df, min_matches):
+    """Drop teams with fewer than `min_matches` games, and every match involving
+    them, so the fit isn't polluted by near-unidentified ratings (newly promoted
+    sides a few games into a season are the usual culprit).
+
+    Applied iteratively: removing a sparse team's matches can push a borderline
+    opponent below the threshold too. A dropped team is simply absent from
+    model_params.json, so downstream predict_match/find_ev_bets skip it.
+    """
+    while True:
+        counts = pd.concat([df["Home"], df["Away"]]).value_counts()
+        sparse = sorted(counts[counts < min_matches].index)
+        if not sparse:
+            return df.reset_index(drop=True), counts.to_dict()
+        print(f"Dropping {len(sparse)} team(s) with < {min_matches} matches: {', '.join(sparse)}")
+        df = df[~df["Home"].isin(sparse) & ~df["Away"].isin(sparse)]
+        if df.empty:
+            raise SystemExit(f"No matches left after applying --min-matches {min_matches}.")
 
 
 def build_weights(dates, xi):
@@ -108,11 +135,28 @@ def fit(df, xi=XI):
 
 
 def main():
-    df = load_matches(CSV_PATH)
+    parser = argparse.ArgumentParser(description="Fit a time-weighted Dixon-Coles model to xG data")
+    parser.add_argument("--csv", default=CSV_PATH)
+    parser.add_argument("--params", default=PARAMS_PATH)
+    parser.add_argument(
+        "--min-matches",
+        type=int,
+        default=MIN_MATCHES,
+        help=f"Drop teams with fewer matches than this before fitting (default {MIN_MATCHES})",
+    )
+    args = parser.parse_args()
+
+    df = load_matches(args.csv)
+    df, match_counts = filter_sparse_teams(df, args.min_matches)
     teams, attack, defense, gamma, rho, result = fit(df)
 
     summary = pd.DataFrame(
-        {"Team": teams, "Attack (alpha)": attack, "Defense (beta)": defense}
+        {
+            "Team": teams,
+            "Attack (alpha)": attack,
+            "Defense (beta)": defense,
+            "Matches": [match_counts[t] for t in teams],
+        }
     ).sort_values("Attack (alpha)", ascending=False)
 
     print(summary.to_string(index=False, float_format=lambda v: f"{v:+.3f}"))
@@ -123,16 +167,17 @@ def main():
 
     params = {
         "teams": {
-            team: {"attack": float(a), "defense": float(b)}
+            team: {"attack": float(a), "defense": float(b), "matches": int(match_counts[team])}
             for team, a, b in zip(teams, attack, defense)
         },
         "home_advantage": float(gamma),
         "rho": float(rho),
         "xi": XI,
+        "min_matches": args.min_matches,
     }
-    with open(PARAMS_PATH, "w") as f:
+    with open(args.params, "w") as f:
         json.dump(params, f, indent=2)
-    print(f"\nSaved parameters to {PARAMS_PATH}")
+    print(f"\nSaved parameters to {args.params}")
 
 
 if __name__ == "__main__":
