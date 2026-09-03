@@ -176,14 +176,27 @@ the training set):
 
 Refitting every match is slow, so `--refit-every` (default 10) reuses a
 fit for that many matches; pass `1` for a true match-by-match backtest.
-`--min-matches` is passed through to the sparse-team filter. There is no
-ROI simulation — the odds API's free tier has no historical closing
-lines to bet against.
+On the current data the two agree to ~0.3% on every metric, so the
+default 10 costs almost nothing. `--min-matches` is passed through to the
+sparse-team filter. There is no ROI simulation — the odds API's free tier
+has no historical closing lines to bet against.
 
-On the committed data (`--min-train 150 --refit-every 10`) the model beats
-the base rate on every metric (log-loss ≈ 1.04 vs 1.11, accuracy ≈ 48% vs
-39%) but is visibly over-confident in the 0.5–0.7 probability band — the
-same "directional, not sharp" caveat, quantified.
+On the committed data (`--min-train 150 --refit-every 1`, 245 matches
+scored, 5 skipped) the model beats the base rate on every metric:
+
+| metric   | model | base rate |
+|----------|-------|-----------|
+| log-loss | 1.039 | 1.107     |
+| RPS      | 0.204 | 0.227     |
+| Brier    | 0.627 | 0.672     |
+| accuracy | 47.8% | 38.8%     |
+
+RPS ≈ 0.20 is in the range published football models report. But the
+calibration table shows the model is over-confident in the 0.5–0.7
+probability band (predicts ~0.55 / ~0.64, observes ~0.49 / ~0.48) —
+short-priced favourites and clear underdogs are well-calibrated. This is
+the "directional, not sharp" caveat, quantified. `backtest_results.csv`
+holds the per-match predictions from that run.
 
 ## Data files
 
@@ -191,6 +204,8 @@ same "directional, not sharp" caveat, quantified.
 - `model_params.json` — fitted model parameters (output of step 2, input
   to step 3): per-team `attack`/`defense`/`matches`, plus `home_advantage`,
   `rho`, `xi`, and `min_matches`.
+- `backtest_results.csv` — per-match predicted vs base-rate probabilities
+  from `backtest.py --refit-every 1` (see above).
 
-Both are committed so `predict_match.py` can be run without re-scraping or
-re-fitting.
+`fbref_xg.csv` and `model_params.json` are committed so `predict_match.py`
+can be run without re-scraping or re-fitting.
