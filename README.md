@@ -157,11 +157,13 @@ Key flags: `--api-key` (or set `ODDS_API_KEY`), `--region`
 the Dixon-Coles fit here is on xG rather than actual goals with a
 loosely-identified ρ (see the caveat in `fit_dixon_coles.py` above),
 treat the model probabilities as directional rather than sharp. The
-backtest (below) shows the model runs over-confident in the mid-range,
-and being an xG fit it tends to over-state Over 2.5 in particular.
-Compare against bookmaker closing lines before trusting a signal, and
-note that recommended stakes are unconstrained (no bankroll cap across
-simultaneous bets) — apply your own risk limits before betting real money.
+backtest (below) shows the 1X2 model beats a base-rate baseline but runs
+over-confident in the mid-range — and that the **Over/Under 2.5 model
+does *not* beat the baseline** and reads systematically high, so
+`--market totals` signals have no validated edge behind them. Compare
+against bookmaker closing lines before trusting a signal, and note that
+recommended stakes are unconstrained (no bankroll cap across simultaneous
+bets) — apply your own risk limits before betting real money.
 
 ## `backtest.py`
 
@@ -192,8 +194,10 @@ default 10 costs almost nothing. `--min-matches` is passed through to the
 sparse-team filter. There is no ROI simulation — the odds API's free tier
 has no historical closing lines to bet against.
 
-On the committed data (`--min-train 150 --refit-every 1`, 245 matches
-scored, 5 skipped) the model beats the base rate on every metric:
+On the committed data (`--min-train 150 --refit-every 10`, 245 matches
+scored, 5 skipped):
+
+**1X2** — the model beats the base rate on every metric:
 
 | metric   | model | base rate |
 |----------|-------|-----------|
@@ -205,9 +209,26 @@ scored, 5 skipped) the model beats the base rate on every metric:
 RPS ≈ 0.20 is in the range published football models report. But the
 calibration table shows the model is over-confident in the 0.5–0.7
 probability band (predicts ~0.55 / ~0.64, observes ~0.49 / ~0.48) —
-short-priced favourites and clear underdogs are well-calibrated. This is
-the "directional, not sharp" caveat, quantified. `backtest_results.csv`
-holds the per-match predictions from that run.
+short-priced favourites and clear underdogs are well-calibrated.
+
+**Over/Under 2.5** — the model does *not* beat the base rate:
+
+| metric   | model | base rate |
+|----------|-------|-----------|
+| log-loss | 0.703 | 0.692     |
+| Brier    | 0.254 | 0.250     |
+| accuracy | 56.3% | 53.9%     |
+
+It systematically over-states Over 2.5: in the 0.6–0.7 predicted band the
+observed Over rate is 0.56, and in the 0.7–0.8 band just 0.39. Fitting on
+xG (which is smoother than goals and misses the fat tail of blowouts)
+pushes totals predictions toward the middle and slightly high. **Treat
+`find_ev_bets --market totals` output as unvalidated** — the model has no
+demonstrated edge there.
+
+`backtest_results.csv` holds the per-match predictions (1X2 + `P(Over)`)
+from that run. A `--refit-every 1` pass matches these numbers to ~0.3%,
+so the cheaper default cadence loses nothing here.
 
 ## Data files
 
