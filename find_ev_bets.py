@@ -1,6 +1,10 @@
-"""Find +EV Premier League 1X2 bets by comparing live bookmaker odds
+"""Find +EV Premier League bets by comparing live bookmaker odds
 (via the-odds-api.com) against Dixon-Coles model probabilities from
 predict_match.py.
+
+Scans two markets: 1X2 (h2h) and Over/Under total goals. Only the 2.5
+goals line is evaluated — that's the line predict_match computes by
+default — so other totals lines a book may offer are ignored.
 
 Setup:
     Get a free API key at https://the-odds-api.com and either export it
@@ -10,6 +14,7 @@ Setup:
 Usage:
     python find_ev_bets.py                       # live odds, default thresholds
     python find_ev_bets.py --min-ev 0.05 --bankroll 500
+    python find_ev_bets.py --market totals        # only over/under 2.5
     python find_ev_bets.py --dry-run              # sample data, no API call/key needed
 """
 
@@ -23,6 +28,10 @@ import requests
 import predict_match
 
 SPORT = "soccer_epl"
+TOTALS_LINE = 2.5  # the only Over/Under line the model prices, and the one we score
+
+# Odds API market key -> the API-request market names it needs.
+MARKET_GROUPS = {"h2h": ["h2h"], "totals": ["totals"], "all": ["h2h", "totals"]}
 
 # The Odds API uses each club's full official name; our model (built from
 # Understat data) uses shorter names. Map API name -> model name here.
@@ -36,10 +45,15 @@ TEAM_NAME_ALIASES = {
 }
 
 
-def fetch_live_odds(api_key, sport=SPORT, region="uk"):
+def fetch_live_odds(api_key, sport=SPORT, region="uk", markets=("h2h", "totals")):
     """Fetches upcoming match odds from bookmakers in decimal format."""
     url = f"https://api.the-odds-api.com/v4/sports/{sport}/odds/"
-    params = {"apiKey": api_key, "regions": region, "markets": "h2h", "oddsFormat": "decimal"}
+    params = {
+        "apiKey": api_key,
+        "regions": region,
+        "markets": ",".join(markets),
+        "oddsFormat": "decimal",
+    }
     res = requests.get(url, params=params, timeout=30)
     if res.status_code != 200:
         raise RuntimeError(f"Odds API error {res.status_code}: {res.text}")
@@ -78,6 +92,8 @@ def build_model_predictions(live_fixtures, params):
             "Home Win": result["home_win"],
             "Draw": result["draw"],
             "Away Win": result["away_win"],
+            f"Over {TOTALS_LINE}": result["goals_over"],
+            f"Under {TOTALS_LINE}": result["goals_under"],
         }
 
     return predictions
@@ -96,7 +112,31 @@ def calculate_ev_and_kelly(prob, decimal_odds, bankroll, kelly_frac):
     return round(ev, 4), round(stake, 2)
 
 
-def evaluate_market_opportunities(live_fixtures, model_predictions, bankroll, min_ev, kelly_frac):
+def resolve_outcome(market_key, outcome, home_team, away_team, probs):
+    """Map one bookmaker outcome to a (display label, model probability) pair,
+    or None if the model doesn't price it (unknown selection, or a totals line
+    other than TOTALS_LINE)."""
+    if market_key == "h2h":
+        name = outcome["name"]
+        if name == home_team:
+            return name, probs.get("Home Win")
+        if name == away_team:
+            return name, probs.get("Away Win")
+        return name, probs.get("Draw")  # the API names the draw "Draw"
+
+    if market_key == "totals":
+        if outcome.get("point") != TOTALS_LINE:
+            return None
+        side = outcome["name"]  # "Over" / "Under"
+        label = f"{side} {TOTALS_LINE:g}"
+        return label, probs.get(label)
+
+    return None
+
+
+def evaluate_market_opportunities(
+    live_fixtures, model_predictions, bankroll, min_ev, kelly_frac, markets=("h2h", "totals")
+):
     """Compares live odds against model probabilities to extract +EV bets."""
     opportunities = []
 
@@ -114,28 +154,24 @@ def evaluate_market_opportunities(live_fixtures, model_predictions, bankroll, mi
             bookie_name = bookmaker["title"]
 
             for market in bookmaker.get("markets", []):
-                if market["key"] != "h2h":
+                if market["key"] not in markets:
                     continue
 
                 for outcome in market["outcomes"]:
-                    selection = outcome["name"]
-                    odds = outcome["price"]
-
-                    if selection == home_team:
-                        model_p = probs.get("Home Win")
-                    elif selection == away_team:
-                        model_p = probs.get("Away Win")
-                    else:
-                        model_p = probs.get("Draw")
-
+                    resolved = resolve_outcome(market["key"], outcome, home_team, away_team, probs)
+                    if resolved is None:
+                        continue
+                    selection, model_p = resolved
                     if not model_p:
                         continue
 
+                    odds = outcome["price"]
                     ev, stake = calculate_ev_and_kelly(model_p, odds, bankroll, kelly_frac)
                     if ev >= min_ev:
                         opportunities.append(
                             {
                                 "Match": match_key,
+                                "Market": market["key"],
                                 "Bookmaker": bookie_name,
                                 "Selection": selection,
                                 "Odds": odds,
@@ -170,7 +206,15 @@ def sample_fixtures():
                                 {"name": "Chelsea", "price": 4.20},
                                 {"name": "Draw", "price": 3.60},
                             ],
-                        }
+                        },
+                        {
+                            "key": "totals",
+                            "outcomes": [
+                                {"name": "Over", "price": 1.80, "point": 2.5},
+                                {"name": "Under", "price": 2.00, "point": 2.5},
+                                {"name": "Over", "price": 3.40, "point": 3.5},
+                            ],
+                        },
                     ],
                 }
             ],
@@ -179,15 +223,23 @@ def sample_fixtures():
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Find +EV Premier League 1X2 bets")
+    parser = argparse.ArgumentParser(description="Find +EV Premier League 1X2 and Over/Under 2.5 bets")
     parser.add_argument("--api-key", default=os.environ.get("ODDS_API_KEY"))
     parser.add_argument("--region", default="uk", choices=["uk", "eu", "us", "au"])
     parser.add_argument("--bankroll", type=float, default=1000.00)
     parser.add_argument("--min-ev", type=float, default=0.03, help="Minimum EV threshold, e.g. 0.03 = 3%%")
     parser.add_argument("--kelly-fraction", type=float, default=0.25)
+    parser.add_argument(
+        "--market",
+        default="all",
+        choices=list(MARKET_GROUPS),
+        help="Which market(s) to scan: h2h (1X2), totals (Over/Under 2.5), or all (default)",
+    )
     parser.add_argument("--params", default=predict_match.PARAMS_PATH)
     parser.add_argument("--dry-run", action="store_true", help="Use sample odds instead of calling the live API")
     args = parser.parse_args()
+
+    markets = MARKET_GROUPS[args.market]
 
     if args.dry_run:
         live_fixtures = sample_fixtures()
@@ -197,13 +249,13 @@ def main():
                 "No API key found. Get a free key from https://the-odds-api.com, then "
                 "export ODDS_API_KEY=<key> or pass --api-key."
             )
-        live_fixtures = fetch_live_odds(args.api_key, region=args.region)
+        live_fixtures = fetch_live_odds(args.api_key, region=args.region, markets=markets)
 
     params = predict_match.load_params(args.params)
     model_predictions = build_model_predictions(live_fixtures, params)
 
     results = evaluate_market_opportunities(
-        live_fixtures, model_predictions, args.bankroll, args.min_ev, args.kelly_fraction
+        live_fixtures, model_predictions, args.bankroll, args.min_ev, args.kelly_fraction, markets
     )
 
     if results.empty:
